@@ -6,15 +6,42 @@
     <description>Recent content on Shashank&#39;s Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Feb 2019 08:38:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Feb 2019 07:58:41 +0000</lastBuildDate>
     
 	<atom:link href="https://shank4804.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Unit Testing in Golang</title>
+      <title></title>
+      <link>https://shank4804.github.io/resume/</link>
+      <pubDate>Sun, 17 Feb 2019 07:58:41 +0000</pubDate>
+      
+      <guid>https://shank4804.github.io/resume/</guid>
+      <description>Resume</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://shank4804.github.io/contact/</link>
+      <pubDate>Sat, 16 Feb 2019 08:24:42 +0000</pubDate>
+      
+      <guid>https://shank4804.github.io/contact/</guid>
+      <description>Contact Email: shank4804@gmail.com LinkedIn: linkedin.com/in/shank7485 GitHub: github.com/shank7485 Twitter: twitter.com/sshank_ IRC: sshank</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://shank4804.github.io/about/</link>
+      <pubDate>Sat, 16 Feb 2019 08:13:47 +0000</pubDate>
+      
+      <guid>https://shank4804.github.io/about/</guid>
+      <description>About  I am a Software Engineer and I love to work as a developer in areas mostly related to distributed systems, scalable web services, cloud infrastructure and anything Open Source.  I am currectly working at Workday Inc. in the San Francisco Bay Area building a scalable platform using all things cloud native (Golang, Kubernetes, Service Mesh) on AWS.  Previously, I used to work at Intel Corporation in the Open Source Technology Group contributing to open source cloud projects.</description>
+    </item>
+    
+    <item>
+      <title>Writing Unit tests and Mocks in Golang</title>
       <link>https://shank4804.github.io/posts/unit-testing-in-golang/</link>
-      <pubDate>Sat, 16 Feb 2019 08:38:00 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2018 08:38:00 +0000</pubDate>
       
       <guid>https://shank4804.github.io/posts/unit-testing-in-golang/</guid>
       <description>I recently started writing some code in Go (or Golang?) there are lot of amazing things to explore. Its always exciting to learn a new language.
@@ -22,21 +49,41 @@ So far, I absolutely love Golang. If you are like me who likes C, Python and all
     </item>
     
     <item>
-      <title>Contact</title>
-      <link>https://shank4804.github.io/contact/</link>
-      <pubDate>Sat, 16 Feb 2019 08:24:42 +0000</pubDate>
+      <title>Applications on Kubernetes</title>
+      <link>https://shank4804.github.io/posts/application-on-kubernetes/</link>
+      <pubDate>Tue, 12 Dec 2017 07:49:08 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/contact/</guid>
-      <description>Email: shank4804@github.com LinkedIn: https://www.linkedin.com/in/shank7485</description>
+      <guid>https://shank4804.github.io/posts/application-on-kubernetes/</guid>
+      <description>It&amp;rsquo;s a world of microservices. With soo many companies containerizing their apps and scaling them using Kubernetes, it&amp;rsquo;s hard not to ignore.
+To an idea of Kubernetes and to play around with it, I created this tutorial to install and deploy dockerized apps on a kubernetes cluster.
+This tutorial has 3 parts:
+ Dockerizing an API
+ Deploying a Kubernetes cluster
+ Deploying the Dockerized API on the cluster and exposing it.</description>
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://shank4804.github.io/about/</link>
-      <pubDate>Sat, 16 Feb 2019 08:13:47 +0000</pubDate>
+      <title>Vim Auto Complete</title>
+      <link>https://shank4804.github.io/posts/vim-auto-complete/</link>
+      <pubDate>Wed, 10 Feb 2016 07:48:15 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/about/</guid>
-      <description>Thanks for visiting! This is Shashank&amp;rsquo;s website. It is currently under contruction.</description>
+      <guid>https://shank4804.github.io/posts/vim-auto-complete/</guid>
+      <description>Get code completion for Python like an IDE in the terminal using Vim editor with YouCompleteMe and Vungle plugin. Similar to
+ This is for Ubuntu Linux (Debian) based OSes. Steps to be followed:  Update to latest Vim. This is done as Vim version greater than 7.41 isn&amp;rsquo;t available in Apt-get of Ubuntu Linux.
+sudo add-apt-repository ppa:pkg-vim/vim-daily
+sudo apt-get update
+sudo apt-get install vim
+dpkg -s vim | grep &#39;Version&#39; #should be greater than 7.</description>
+    </item>
+    
+    <item>
+      <title>Internet Relay Chat</title>
+      <link>https://shank4804.github.io/posts/irc/</link>
+      <pubDate>Fri, 08 Jan 2016 07:46:15 +0000</pubDate>
+      
+      <guid>https://shank4804.github.io/posts/irc/</guid>
+      <description>Ever since I wanted to contribute to an open-source project, I was told on online forums to contact the specific IRC channels to ask questions and start contributing. That&amp;rsquo;s fine. I&amp;rsquo;ll do that. But I never understood what was IRC.
+So what&amp;rsquo;s IRC? Wikipedia quotes &amp;lsquo;Internet Relay Chat Protocol (IRCP) is an application layer protocol that facilitates communication in the form of text. The chat process works on a client/server networking model.</description>
     </item>
     
   </channel>

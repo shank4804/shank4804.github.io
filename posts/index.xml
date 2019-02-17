@@ -6,19 +6,57 @@
     <description>Recent content in Posts on Shashank&#39;s Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Feb 2019 08:38:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Feb 2018 08:38:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shank4804.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Unit Testing in Golang</title>
+      <title>Writing Unit tests and Mocks in Golang</title>
       <link>https://shank4804.github.io/posts/unit-testing-in-golang/</link>
-      <pubDate>Sat, 16 Feb 2019 08:38:00 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2018 08:38:00 +0000</pubDate>
       
       <guid>https://shank4804.github.io/posts/unit-testing-in-golang/</guid>
       <description>I recently started writing some code in Go (or Golang?) there are lot of amazing things to explore. Its always exciting to learn a new language.
 So far, I absolutely love Golang. If you are like me who likes C, Python and all this systems/low level OS stuff, you&amp;rsquo;ll get a feeling that Golang for systems will be similar to what JS is for the web. (+ve JS things :-) ).</description>
+    </item>
+    
+    <item>
+      <title>Applications on Kubernetes</title>
+      <link>https://shank4804.github.io/posts/application-on-kubernetes/</link>
+      <pubDate>Tue, 12 Dec 2017 07:49:08 +0000</pubDate>
+      
+      <guid>https://shank4804.github.io/posts/application-on-kubernetes/</guid>
+      <description>It&amp;rsquo;s a world of microservices. With soo many companies containerizing their apps and scaling them using Kubernetes, it&amp;rsquo;s hard not to ignore.
+To an idea of Kubernetes and to play around with it, I created this tutorial to install and deploy dockerized apps on a kubernetes cluster.
+This tutorial has 3 parts:
+ Dockerizing an API
+ Deploying a Kubernetes cluster
+ Deploying the Dockerized API on the cluster and exposing it.</description>
+    </item>
+    
+    <item>
+      <title>Vim Auto Complete</title>
+      <link>https://shank4804.github.io/posts/vim-auto-complete/</link>
+      <pubDate>Wed, 10 Feb 2016 07:48:15 +0000</pubDate>
+      
+      <guid>https://shank4804.github.io/posts/vim-auto-complete/</guid>
+      <description>Get code completion for Python like an IDE in the terminal using Vim editor with YouCompleteMe and Vungle plugin. Similar to
+ This is for Ubuntu Linux (Debian) based OSes. Steps to be followed:  Update to latest Vim. This is done as Vim version greater than 7.41 isn&amp;rsquo;t available in Apt-get of Ubuntu Linux.
+sudo add-apt-repository ppa:pkg-vim/vim-daily
+sudo apt-get update
+sudo apt-get install vim
+dpkg -s vim | grep &#39;Version&#39; #should be greater than 7.</description>
+    </item>
+    
+    <item>
+      <title>Internet Relay Chat</title>
+      <link>https://shank4804.github.io/posts/irc/</link>
+      <pubDate>Fri, 08 Jan 2016 07:46:15 +0000</pubDate>
+      
+      <guid>https://shank4804.github.io/posts/irc/</guid>
+      <description>Ever since I wanted to contribute to an open-source project, I was told on online forums to contact the specific IRC channels to ask questions and start contributing. That&amp;rsquo;s fine. I&amp;rsquo;ll do that. But I never understood what was IRC.
+So what&amp;rsquo;s IRC? Wikipedia quotes &amp;lsquo;Internet Relay Chat Protocol (IRCP) is an application layer protocol that facilitates communication in the form of text. The chat process works on a client/server networking model.</description>
     </item>
     
   </channel>

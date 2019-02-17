@@ -3,54 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://shank4804.github.io/resume/</loc>
+    <loc>http://shashankkumar.me/resume/</loc>
     <lastmod>2019-02-17T07:58:41+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shank4804.github.io/contact/</loc>
+    <loc>http://shashankkumar.me/contact/</loc>
     <lastmod>2019-02-16T08:24:42+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shank4804.github.io/about/</loc>
-    <lastmod>2019-02-16T08:13:47+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shank4804.github.io/posts/unit-testing-in-golang/</loc>
+    <loc>http://shashankkumar.me/posts/unit-testing-in-golang/</loc>
     <lastmod>2018-02-16T08:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shank4804.github.io/posts/application-on-kubernetes/</loc>
+    <loc>http://shashankkumar.me/posts/application-on-kubernetes/</loc>
     <lastmod>2017-12-12T07:49:08+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shank4804.github.io/posts/vim-auto-complete/</loc>
+    <loc>http://shashankkumar.me/posts/vim-auto-complete/</loc>
     <lastmod>2016-02-10T07:48:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shank4804.github.io/posts/irc/</loc>
+    <loc>http://shashankkumar.me/posts/irc/</loc>
     <lastmod>2016-01-08T07:46:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shank4804.github.io/posts/</loc>
+    <loc>http://shashankkumar.me/homepage/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shashankkumar.me/posts/</loc>
     <lastmod>2018-02-16T08:38:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://shank4804.github.io/</loc>
+    <loc>http://shashankkumar.me/</loc>
     <lastmod>2019-02-17T07:58:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://shank4804.github.io/tags/</loc>
+    <loc>http://shashankkumar.me/tags/</loc>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,21 @@
     <description>Recent content on Shashank&#39;s Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Apr 2019 06:59:15 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 06:02:46 +0000</lastBuildDate>
     
 	<atom:link href="https://shank4804.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Overview of Google&#39;s Machine Learning Crash Course - Part 1</title>
+      <link>https://shank4804.github.io/posts/overview-ml-crash-course-1/</link>
+      <pubDate>Mon, 12 Aug 2019 06:02:46 +0000</pubDate>
+      
+      <guid>https://shank4804.github.io/posts/overview-ml-crash-course-1/</guid>
+      <description>Helps do 3 things better for Software Engineers:
+ Reduce time programming: Move from rule based program (logic) to writing programs where we feed it a data and we get results from it which are closer to the result.
+ Customize products for specific users: Ex: Instead of writing two programs for English / French users, just write a general ML program and feed it English / French to generate language specific results.</description>
+    </item>
     
     <item>
       <title>Overview of Learning How to Learn Coursera course</title>
@@ -107,15 +118,6 @@ dpkg -s vim | grep &#39;Version&#39; #should be greater than 7.</description>
       <guid>https://shank4804.github.io/posts/irc/</guid>
       <description>Ever since I wanted to contribute to an open-source project, I was told on online forums to contact the specific IRC channels to ask questions and start contributing. That&amp;rsquo;s fine. I&amp;rsquo;ll do that. But I never understood what was IRC.
 So what&amp;rsquo;s IRC? Wikipedia quotes &amp;lsquo;Internet Relay Chat Protocol (IRCP) is an application layer protocol that facilitates communication in the form of text. The chat process works on a client/server networking model.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://shank4804.github.io/homepage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://shank4804.github.io/homepage/</guid>
-      <description>About  I am a Software Engineer and I love to work as a developer in areas mostly related to distributed systems, scalable web services, cloud infrastructure and anything Open Source.  I am currectly working at Workday Inc. in the San Francisco Bay Area building a scalable platform using all things cloud native (Golang, Kubernetes, Service Mesh) on AWS.  Previously, I used to work at Intel Corporation in the Open Source Technology Group contributing to open source cloud projects.</description>
     </item>
     
   </channel>

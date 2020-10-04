@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Shashank&#39;s Website</title>
@@ -6,10 +6,18 @@
     <description>Recent content in Posts on Shashank&#39;s Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Feb 2020 06:10:01 +0000</lastBuildDate>
-    
-	<atom:link href="https://shank4804.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 04 Oct 2020 06:10:01 +0000</lastBuildDate><atom:link href="https://shank4804.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Started a new podcast around tech, startups, venture capital</title>
+      <link>https://shank4804.github.io/posts/started-tech-startup-venture-podcast/</link>
+      <pubDate>Sun, 04 Oct 2020 06:10:01 +0000</pubDate>
+      
+      <guid>https://shank4804.github.io/posts/started-tech-startup-venture-podcast/</guid>
+      <description>I recently started a new podcast in the Kannada language spoken in my home town of Bangalore, India with my friend at www.techsamskruthi.com
+Here we mainly talk about 3 things in an episode:
+  Overview of recent happenings in all things tech.
+  We pick a new and upcoming startup which has potential to go big and talk about their business model, venture funding, future potential etc.</description>
+    </item>
     
     <item>
       <title>AngelList&#39;s Naval Ravikant: How to Get Rich (without getting lucky)</title>
@@ -19,7 +27,7 @@
       <guid>https://shank4804.github.io/posts/naval-ravikant-how-to-get-rich/</guid>
       <description>Amazing series of tweets on wealth generation by Naval Ravikant who is the founder of AngelList and an investor in a host of successful companies.
 The podcast discussing these tweets:
-  And the link to the original thread of tweets:
+And the link to the original thread of tweets:
 Seek wealth, not money or status. Wealth is having assets that earn while you sleep. Money is how we transfer time and wealth. Status is your place in the social hierarchy.</description>
     </item>
     
@@ -30,8 +38,8 @@ Seek wealth, not money or status. Wealth is having assets that earn while you sl
       
       <guid>https://shank4804.github.io/posts/overview-ml-crash-course-1/</guid>
       <description>Helps do 3 things better for Software Engineers:
- Reduce time programming: Move from rule based program (logic) to writing programs where we feed it a data and we get results from it which are closer to the result.
- Customize products for specific users: Ex: Instead of writing two programs for English / French users, just write a general ML program and feed it English / French to generate language specific results.</description>
+  Reduce time programming: Move from rule based program (logic) to writing programs where we feed it a data and we get results from it which are closer to the result.
+  Customize products for specific users: Ex: Instead of writing two programs for English / French users, just write a general ML program and feed it English / French to generate language specific results.</description>
     </item>
     
     <item>
@@ -41,7 +49,7 @@ Seek wealth, not money or status. Wealth is having assets that earn while you sl
       
       <guid>https://shank4804.github.io/posts/overview-learning-how-to-learn-coursera/</guid>
       <description>This is my notes from the course Learning How to Learn from Coursera
-Quick look at concepts consolidated from the course  Focused mode vs diffused mode 25 minute Pomodoro method Long term vs Short term memory Spaced repeated practice to move from Short to Long Sleep well Chunking Releated practice Mini-testing Recall Illusion of Competence Overlearning Deliberate practise Einstellung Interleaving Procrastination Procrastination as a Habit Habit made of cue, routine, reward, belief Initial start is hard Process vs Product Use auto-drive zombie mode (blindy do) Activity tracking before sleep for next day Pomodoro early in the morning Conjure visual images to remember General Problem solving:  Apply known technique Modify known technique Focused brute force thinking Diffused related thinking Repeat until solution  Exercise best method for brain enhancement Visual metaphor (Mud + JSON Marshall) More Genius less creative Imposter Syndrome perseverance = the virtue of the less brilliant Teamwork for fresh brain perspective Minitest benefit &amp;gt;&amp;gt;&amp;gt; Learning benefit Left brain vs right brain (focused vs diffused) Checklist to measure test / interview preparation quality Start hard, jump to easy (Focused vs diffused) Anxiety = Excited for test, not afraid Breath slowly  Week 1: What is Learning?</description>
+ Quick look at concepts consolidated from the course  Focused mode vs diffused mode 25 minute Pomodoro method Long term vs Short term memory Spaced repeated practice to move from Short to Long Sleep well Chunking Releated practice Mini-testing Recall Illusion of Competence Overlearning Deliberate practise Einstellung Interleaving Procrastination Procrastination as a Habit Habit made of cue, routine, reward, belief Initial start is hard Process vs Product Use auto-drive zombie mode (blindy do) Activity tracking before sleep for next day Pomodoro early in the morning Conjure visual images to remember General Problem solving:  Apply known technique Modify known technique Focused brute force thinking Diffused related thinking Repeat until solution   Exercise best method for brain enhancement Visual metaphor (Mud + JSON Marshall) More Genius less creative Imposter Syndrome perseverance = the virtue of the less brilliant Teamwork for fresh brain perspective Minitest benefit &amp;raquo;&amp;gt; Learning benefit Left brain vs right brain (focused vs diffused) Checklist to measure test / interview preparation quality Start hard, jump to easy (Focused vs diffused) Anxiety = Excited for test, not afraid Breath slowly   Week 1: What is Learning?</description>
     </item>
     
     <item>
@@ -52,7 +60,7 @@ Quick look at concepts consolidated from the course  Focused mode vs diffused mo
       <guid>https://shank4804.github.io/posts/swe-interview-and-learning-tips/</guid>
       <description>I was watching through Joma&amp;rsquo;s video on his YouTube channel about a guy named Cyrus Xi receiving amazing offers and I think his tips on preparing / learning in general are worth documenting. So, here it is.
 Video link:   His reddit posts:  Pre-FB: https://www.reddit.com/r/cscareerquestions/comments/b3w1gg/2_year_update_my_journey_tips_29_gpa_at_a_small/ Currently after getting Uber, Snap etc.: https://www.reddit.com/r/cscareerquestions/comments/9i0pow/graduated_with_a_24_gpa_1_year_ago_after_studying/  His study guide: https://workflowy.com/s/study-guide/RD5kZ682pWX5oxiE
-Along the read, I found this amazing article on Career Planning.</description>
+Along the read, I found this amazing article on Career Planning. Seems it was originally written by Marc Andreessen.</description>
     </item>
     
     <item>
@@ -85,9 +93,9 @@ So far, I absolutely love Golang. If you are like me who likes C, Python and all
       <description>It&amp;rsquo;s a world of microservices. With soo many companies containerizing their apps and scaling them using Kubernetes, it&amp;rsquo;s hard not to ignore.
 To an idea of Kubernetes and to play around with it, I created this tutorial to install and deploy dockerized apps on a kubernetes cluster.
 This tutorial has 3 parts:
- Dockerizing an API
- Deploying a Kubernetes cluster
- Deploying the Dockerized API on the cluster and exposing it.</description>
+  Dockerizing an API
+  Deploying a Kubernetes cluster
+  Deploying the Dockerized API on the cluster and exposing it.</description>
     </item>
     
     <item>
@@ -97,7 +105,7 @@ This tutorial has 3 parts:
       
       <guid>https://shank4804.github.io/posts/vim-auto-complete/</guid>
       <description>Get code completion for Python like an IDE in the terminal using Vim editor with YouCompleteMe and Vungle plugin. Similar to
- This is for Ubuntu Linux (Debian) based OSes. Steps to be followed:  Update to latest Vim. This is done as Vim version greater than 7.41 isn&amp;rsquo;t available in Apt-get of Ubuntu Linux.
+ This is for Ubuntu Linux (Debian) based OSes. Steps to be followed:   Update to latest Vim. This is done as Vim version greater than 7.41 isn&amp;rsquo;t available in Apt-get of Ubuntu Linux.
 sudo add-apt-repository ppa:pkg-vim/vim-daily
 sudo apt-get update
 sudo apt-get install vim

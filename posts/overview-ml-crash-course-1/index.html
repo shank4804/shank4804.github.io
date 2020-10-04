@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.75.1" />
   <link rel="stylesheet" href="https://shank4804.github.io/css/bootstrap.min.css">
   
   
@@ -134,77 +134,67 @@ audio {
         
 
 <h1>Overview of Google&#39;s Machine Learning Crash Course - Part 1</h1>
-
-
 <p>Helps do 3 things better for Software Engineers:</p>
-
 <ol>
-<li><p>Reduce time programming: Move from rule based program (logic) to writing programs where we feed it a data and we get results from it which are closer to the result.</p></li>
-
-<li><p>Customize products for specific users: Ex: Instead of writing two programs for English / French users, just write a general ML program and feed it English / French to generate language specific results.</p></li>
-
-<li><p>Complete <code>unprogrammable</code> tasks: Ex: Like computer vision / speech recognision is easier with ML than hardcoding logic.</p></li>
+<li>
+<p>Reduce time programming: Move from rule based program (logic) to writing programs where we feed it a data and we get results from it which are closer to the result.</p>
+</li>
+<li>
+<p>Customize products for specific users: Ex: Instead of writing two programs for English / French users, just write a general ML program and feed it English / French to generate language specific results.</p>
+</li>
+<li>
+<p>Complete <code>unprogrammable</code> tasks: Ex: Like computer vision / speech recognision is easier with ML than hardcoding logic.</p>
+</li>
 </ol>
-
 <p>ML changes the way a software engineer thinks from logic to statistics. More on experimentation than hardcoded logic.</p>
-
 <h2 id="basic-terminologies-used-in-ml">Basic terminologies used in ML</h2>
-
 <p>Supervised Machine Learning: ML systems learn -&gt; how to combine input -&gt; to product useful predictions -&gt; on never-before-seen data.</p>
-
 <ol>
-<li><p>Label:</p>
-
+<li>
+<p>Label:</p>
 <p>Label is a variable we are predicting. Ex: In email spam detection, a <code>label</code> is to identify is a mail is spam or not spam.</p>
-
-<p>Typically represented by a variable <code>y</code>.</p></li>
-
-<li><p>Features:</p>
-
+<p>Typically represented by a variable <code>y</code>.</p>
+</li>
+<li>
+<p>Features:</p>
 <p>Features are input variables describing our data. Ex: In email spam detection, a <code>feature</code> might be either the contents of the email, or the sender who might be spammy.</p>
-
-<p>Typically represented by a variables <code>{x1, x2, x3, ...}</code></p></li>
-
-<li><p>Example:</p>
-
+<p>Typically represented by a variables <code>{x1, x2, x3, ...}</code></p>
+</li>
+<li>
+<p>Example:</p>
 <p>Example is a particular instance of data <code>x</code>. An example is a <code>vector</code> containing representing implicitely containing <code>features</code> and <code>labels</code>.</p>
-
 <p>Examples are of two types:</p>
+<pre><code> * Labelled Example:
 
-<pre><code>* Labelled Example:
+     Has both `{features, label}: (x, y)` Ex: in email spam detection, a mail indicating where its spam or not. Maybe this input is provided by the user.
 
-    Has both `{features, label}: (x, y)` Ex: in email spam detection, a mail indicating where its spam or not. Maybe this input is provided by the user.
+     Used to `train` a model.
 
-    Used to `train` a model.
+ * Unlabelled Example:
 
-* Unlabelled Example:
+     Has only `{features, ?}: (x, ?)`
 
-    Has only `{features, ?}: (x, ?)`
-
-    Used to make predictions (infer) on new data. Ex: A new email which our program has to detect whether spam or not based on its previous data.
-</code></pre></li>
-
-<li><p>Model:</p>
-
+     Used to make predictions (infer) on new data. Ex: A new email which our program has to detect whether spam or not based on its previous data.
+</code></pre>
+</li>
+<li>
+<p>Model:</p>
 <p>A Model maps <code>examples</code> to predicted labels <code>y'</code></p>
-
 <p>The thing that is actually doing the prediction.</p>
-
 <p>Two phases of a model&rsquo;s life:</p>
-
 <ul>
-<li><p>Training: Training means creating or learning the model. That is, the model is shown labeled examples and enable the model to gradually learn the relationships between features and label.</p></li>
-
-<li><p>Interence: Inference means applying the trained model to unlabeled examples. That is, you use the trained model to make useful predictions (y&rsquo;). Ex: During inference, a new email is predicted to be spam or not spam.</p></li>
-</ul></li>
+<li>
+<p>Training: Training means creating or learning the model. That is, the model is shown labeled examples and enable the model to gradually learn the relationships between features and label.</p>
+</li>
+<li>
+<p>Interence: Inference means applying the trained model to unlabeled examples. That is, you use the trained model to make useful predictions (y'). Ex: During inference, a new email is predicted to be spam or not spam.</p>
+</li>
+</ul>
+</li>
 </ol>
-
 <p><code>Regression</code>: Regression model predicts continuous values. Ex: Predict housing prices, predicting probability that a user will click an advert.</p>
-
 <p><code>Classification</code>: Classification model predicts discrete values. Ex: Is new email spam or not spam, is image a dog or cat.</p>
-
 <h2 id="regression">Regression</h2>
-
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <msup>
     <mi>y</mi>
@@ -222,27 +212,19 @@ audio {
     <mn>'</mn>
   </msub>
 </math>
-
 <p>Where:</p>
-
 <ul>
-<li>y&rsquo; is the predicted label (a desired output).</li>
+<li>y' is the predicted label (a desired output).</li>
 <li>is the bias (the y-intercept), sometimes referred to as .</li>
 <li>is the weight of feature 1. Weight is the same concept as the &ldquo;slope&rdquo;  in the traditional equation of a line.</li>
 <li>is a feature (a known input).</li>
 </ul>
-
 <h2 id="loss">Loss</h2>
-
 <p>Loss is:</p>
-
 <pre><code>The square of the difference between the label and the prediction
   = (observation - prediction(x))2
   = (y - y')2
-</code></pre>
-
-<p>Simplest way to calculate loss is using Mean Square Error where Mean square error (MSE) is the average squared loss per example over the whole dataset. To calculate MSE, sum up all the squared losses for individual examples and then divide by the number of examples:</p>
-
+</code></pre><p>Simplest way to calculate loss is using Mean Square Error where Mean square error (MSE) is the average squared loss per example over the whole dataset. To calculate MSE, sum up all the squared losses for individual examples and then divide by the number of examples:</p>
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mi>M</mi>
   <mi>S</mi>
@@ -285,20 +267,13 @@ audio {
     <mn>2</mn>
   </msup>
 </math>
-
 <p>Although MSE is commonly-used in machine learning, it is neither the only practical loss function nor the best loss function for all circumstances.</p>
-
 <h2 id="reducing-this-loss">Reducing this Loss</h2>
-
 <p><em>Training is basically to adjust the parameters going into a mathematical equation as above so that the overall loss
 is as low as possible</em></p>
-
 <p>Diagram:</p>
-
-<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/GradientDescentDiagram.PNG" alt="reducing loss" /></p>
-
-<p>The <code>model</code> takes one or more features as input and returns one prediction (y&rsquo;) as output. To simplify, consider a model that takes one feature and returns one prediction:</p>
-
+<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/GradientDescentDiagram.PNG" alt="reducing loss"></p>
+<p>The <code>model</code> takes one or more features as input and returns one prediction (y') as output. To simplify, consider a model that takes one feature and returns one prediction:</p>
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <msup>
     <mi>y</mi>
@@ -316,74 +291,40 @@ is as low as possible</em></p>
     <mn>'</mn>
   </msub>
 </math>
-
-<p>Starting with random initial values for b = 0 and w1 = 0 and first feature value x1 is 10, we get y&rsquo; = 0.</p>
-
-<p>The <code>Compute Loss</code> part of the diagram is the loss function that the model will use. Suppose we use the squared loss function. The loss function takes in two input values y&rsquo;: The model&rsquo;s prediction for features x and y: The correct label corresponding to features x.</p>
-
+<p>Starting with random initial values for b = 0 and w1 = 0 and first feature value x1 is 10, we get y' = 0.</p>
+<p>The <code>Compute Loss</code> part of the diagram is the loss function that the model will use. Suppose we use the squared loss function. The loss function takes in two input values y': The model&rsquo;s prediction for features x and y: The correct label corresponding to features x.</p>
 <p>In the <code>Compute parameter updates</code> part of the diagram that the machine learning system examines the value of the loss function and generates new values for b and w1. Assuming this mysterious box devises new values and then the machine learning system re-evaluates all those features against all those labels, yielding a new value for the loss function, which yields new parameter values.</p>
-
 <p>This continues iterating until the algorithm discovers the model parameters with the lowest possible loss. Usually, you iterate until overall loss stops changing or at least changes extremely slowly. When that happens, we say that the model has <code>converged</code>.</p>
-
 <h2 id="using-gradient-descent-to-find-the-loss-optimally">Using Gradient Descent to find the loss optimally</h2>
-
 <p><code>Compute parameter updates</code> in diagram above is where Gradient Descent calculation is usually done.</p>
-
 <p>Plotting all w1 values vs Loss:</p>
-
-<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/convex.PNG" alt="convex" /></p>
-
+<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/convex.PNG" alt="convex"></p>
 <p>Here there is only one place where the slope is exactly 0. That minimum is where the loss function converges.</p>
-
 <p>Calculating loss for all values of w1 is inefficient. This is where Gradient Descent helps.</p>
-
-<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/GradientDescentGradientStep.PNG" alt="GradientDescentGradientStep" /></p>
-
+<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/GradientDescentGradientStep.PNG" alt="GradientDescentGradientStep"></p>
 <p>Pick some starting random value for w1 and gradient descent algorithm then calculates the gradient of the loss curve at the starting point.</p>
-
 <p>The gradient of loss is equal to the derivative (slope) of the curve, and tells you which way is &ldquo;warmer&rdquo; or &ldquo;colder.&rdquo; When there are multiple weights,the gradient is a vector of partial derivatives with respect to the weights.</p>
-
 <p>The gradient is vector with direction and magnitude.</p>
-
 <p>The gradient always points in the direction of steepest increase in the loss function. The gradient descent algorithm takes a step in the direction of the negative gradient in order to reduce loss as quickly as possible.</p>
-
 <h2 id="understanding-the-calculus-behind-this-gradient-calculation">Understanding the calculus behind this gradient calculation</h2>
-
 <p>Typically TensorFlow handles all the gradient computations. But, this section is mainly for curiosity.</p>
-
 <p>Given an equation:</p>
-
-<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/Equation.PNG" alt="Equation.png" /></p>
-
+<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/Equation.PNG" alt="Equation.png"></p>
 <p>Partial derivating with y as constant:</p>
-
-<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/dx.PNG" alt="dx.png" /></p>
-
+<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/dx.PNG" alt="dx.png"></p>
 <p>Partial derivating with x as constant:</p>
-
-<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/dy.PNG" alt="dy.png" /></p>
-
+<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/dy.PNG" alt="dy.png"></p>
 <p>In machine learning, partial derivatives are mostly used in conjunction with the gradient of a function.</p>
-
 <p>The gradient of a function, denoted as follows, is the vector of partial derivatives with respect to all of the independent variables.</p>
-
 <p>Gradient for equation above:</p>
-
-<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/GradientEquation.PNG" alt="GradientEquation.PNG" /></p>
-
-<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/PositiveNegativeDescent.PNG" alt="PositiveNegativeDescent" /></p>
-
+<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/GradientEquation.PNG" alt="GradientEquation.PNG"></p>
+<p><img src="https://raw.githubusercontent.com/shank4804/shank4804.github.io/master/images/PositiveNegativeDescent.PNG" alt="PositiveNegativeDescent"></p>
 <p>The gradient of  is a two-dimensional vector that tells you in which direction to move for the maximum increase in height. Thus, the negative of the gradient moves you in the direction of maximum decrease in height. In other words, the <code>negative of the gradient vector points into the valley</code> which typically is lowest loss in gradient descent.</p>
-
 <h2 id="learning-rate">Learning Rate</h2>
-
 <p>Gradient descent algorithms multiply the gradient by a scalar known as the <code>learning rate</code> (also sometimes called <code>step size</code>) to determine the next point. Ex: gradient magnitude = 2.5, learning rate = 0.01, next point= 0.025.</p>
-
 <p>Hyperparameters = knobs that ML engineers tweak in machine learning algorithms</p>
-
 <p>Most ML engineers spend a fair amount of time tuning the learning rate cause
 picking small learning rate takes too much time and picking large learning rate overshoots the minima.</p>
-
 <p><code>Goldilocks</code> Learning rate = rate that is just right.</p>
 
 

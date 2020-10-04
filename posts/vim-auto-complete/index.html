@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.75.1" />
   <link rel="stylesheet" href="https://shank4804.github.io/css/bootstrap.min.css">
   
   
@@ -134,89 +134,65 @@ audio {
         
 
 <h1>Vim Auto Complete</h1>
-
-
 <p>Get code completion for Python like an IDE in the terminal using Vim editor with
 YouCompleteMe and Vungle plugin. Similar to</p>
-
 <div class="text-center">
 <img align="center" src="https://raw.githubusercontent.com/shank7485/Blog_Files/master/0OP4ood.gif" width="500" height="400" />
 </div>
-
 <h3 id="this-is-for-ubuntu-linux-debian-based-oses"><strong>This is for Ubuntu Linux (Debian) based OSes.</strong></h3>
-
 <h3 id="steps-to-be-followed"><strong>Steps to be followed:</strong></h3>
-
 <ul>
-<li><p>Update to latest Vim. This is done as Vim version greater than 7.41 isn&rsquo;t available in Apt-get of Ubuntu Linux.</p>
-
+<li>
+<p>Update to latest Vim. This is done as Vim version greater than 7.41 isn&rsquo;t available in Apt-get of Ubuntu Linux.</p>
 <p><code>sudo add-apt-repository ppa:pkg-vim/vim-daily</code></p>
-
 <p><code>sudo apt-get update</code></p>
-
 <p><code>sudo apt-get install vim</code></p>
-
 <p><code>dpkg -s vim | grep 'Version' #should be greater than 7.41</code></p>
-
-<p><code>touch ~/.vimrc</code></p></li>
-
-<li><p>Get Vundle.</p>
-
-<p><code>git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</code></p></li>
-
-<li><p>Add following in ~/.vimrc.</p>
-
+<p><code>touch ~/.vimrc</code></p>
+</li>
+<li>
+<p>Get Vundle.</p>
+<p><code>git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</code></p>
+</li>
+<li>
+<p>Add following in ~/.vimrc.</p>
 <p><code>set nocompatible</code></p>
-
 <p><code>filetype off</code></p>
-
 <p><code>syntax on</code></p>
-
 <p><code>set rtp+=~/.vim/bundle/Vundle.vim</code></p>
-
 <p><code>call vundle#begin()</code></p>
-
 <p><code>let g:ycm_confirm_extra_conf = 0</code></p>
-
 <p><code>Plugin 'VundleVim/Vundle.vim'</code></p>
-
 <p><code>Plugin 'Valloric/YouCompleteMe'</code></p>
-
 <p><code>autocmd CursorMovedI * if pumvisible() == 0|pclose|endif</code></p>
-
 <p><code>autocmd InsertLeave * if pumvisible() == 0|pclose|endif</code></p>
-
 <p><code>call vundle#end()</code></p>
-
-<p><code>filetype plugin indent on</code></p></li>
-
-<li><p>Launch Vim and run the following. Plugin Installation completes with ‘Done!’ at the bottom left. Come out of it using :q.</p>
-
-<p><code>:PluginInstall</code></p></li>
-
-<li><p>Install development tools and CMake.</p>
-
-<p><code>sudo apt-get install build-essential cmake</code></p></li>
-
-<li><p>Install Python Dev.</p>
-
-<p><code>sudo apt-get install python-dev python3-dev</code></p></li>
-
-<li><p>Compiling YCM without semantic support for C-family languages (Installing only for Python).</p>
-
+<p><code>filetype plugin indent on</code></p>
+</li>
+<li>
+<p>Launch Vim and run the following. Plugin Installation completes with ‘Done!’ at the bottom left. Come out of it using :q.</p>
+<p><code>:PluginInstall</code></p>
+</li>
+<li>
+<p>Install development tools and CMake.</p>
+<p><code>sudo apt-get install build-essential cmake</code></p>
+</li>
+<li>
+<p>Install Python Dev.</p>
+<p><code>sudo apt-get install python-dev python3-dev</code></p>
+</li>
+<li>
+<p>Compiling YCM without semantic support for C-family languages (Installing only for Python).</p>
 <p><code>cd ~/.vim/bundle/YouCompleteMe</code></p>
-
-<p><code>./install.py</code></p></li>
-
-<li><p>Test by opening any .py file. When you start typing, we start to see code recommendation and completions.</p></li>
+<p><code>./install.py</code></p>
+</li>
+<li>
+<p>Test by opening any .py file. When you start typing, we start to see code recommendation and completions.</p>
+</li>
 </ul>
-
 <h3 id="based-on-tutorials-from"><strong>Based on tutorials from:</strong></h3>
-
 <p><a href="https://github.com/VundleVim/Vundle.vim#quick-start">https://github.com/VundleVim/Vundle.vim#quick-start</a></p>
-
 <p><a href="http://valloric.github.io/YouCompleteMe/#ubuntu-linux-x64">http://valloric.github.io/YouCompleteMe/#ubuntu-linux-x64</a></p>
-
 <h3 id="these-steps-might-be-outdated-over-time-the-best-place-get-the-updated-tutorial-is-the-follow-the-above-links"><strong>These steps might be outdated over time. The best place get the updated tutorial is the follow the above links.</strong></h3>
 
 

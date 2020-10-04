@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.75.1" />
   <link rel="stylesheet" href="https://shank4804.github.io/css/bootstrap.min.css">
   
   
@@ -134,28 +134,24 @@ audio {
         
 
 <h1>Applications on Kubernetes</h1>
-
-
 <p>It&rsquo;s a world of microservices. With soo many companies containerizing their apps and scaling
 them using Kubernetes, it&rsquo;s hard not to ignore.</p>
-
 <p>To an idea of Kubernetes and to play around with it, I created this tutorial to install and deploy dockerized apps on a kubernetes
 cluster.</p>
-
 <p>This tutorial has 3 parts:</p>
-
 <ul>
-<li><p>Dockerizing an API</p></li>
-
-<li><p>Deploying a Kubernetes cluster</p></li>
-
-<li><p>Deploying the Dockerized API on the cluster and exposing it.</p></li>
+<li>
+<p>Dockerizing an API</p>
+</li>
+<li>
+<p>Deploying a Kubernetes cluster</p>
+</li>
+<li>
+<p>Deploying the Dockerized API on the cluster and exposing it.</p>
+</li>
 </ul>
-
 <h2 id="dockering-an-api"><strong>Dockering an API</strong></h2>
-
 <p>For the purpose of this tutorial, I created a simple Flask API which return the IP address of the host it is running on</p>
-
 <pre><code>import socket
 import fcntl
 import struct
@@ -185,21 +181,13 @@ def hello_world():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 </code></pre>
-
 <p><strong>To dockerize the above API, the following steps are followed:</strong></p>
-
 <p><code>mkdir flask_api</code></p>
-
 <p><code>cd flask_api</code></p>
-
 <p><code>vi flask_api.py</code></p>
-
 <p><strong>Paste the above code in flask_api.py.</strong></p>
-
 <p><code>vi Dockerfile</code></p>
-
 <p><strong>Paste the following Dockerfile.</strong></p>
-
 <pre><code>FROM ubuntu:14.04
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
@@ -209,99 +197,56 @@ RUN pip install -r requirements.txt
 ENTRYPOINT [&quot;python&quot;]
 CMD [&quot;flask_api.py&quot;]
 </code></pre>
-
 <p><code>sudo docker build -t flask_api .</code></p>
-
 <p><code>sudo docker tag latest</code></p>
-
 <p><code>sudo docker images</code></p>
-
 <p><strong>The flask_api docker image should be built and should be listed in the image list. Now to deploy this on Kubernetes, it needs to uploaded to Docker Hub.</strong></p>
-
 <p><code>sudo docker push &lt;Repo-name-on-docker-hub&gt;</code></p>
-
 <p><strong>The image should be present in your repository on Docker hub. This will later be used to deploy on the Kubernetes cluster.</strong></p>
-
 <h2 id="deploying-a-kubernetes-cluster"><strong>Deploying a Kubernetes cluster</strong></h2>
-
 <p>For purposes of tutorial, we make a cluster on 3 nodes IPs 192.168.0.1, 192.168.0.2 and 192.168.0.3.</p>
-
 <p>IP 192.168.0.1 is the master. And IP 192.168.0.2 and 192.168.0.3 is where we run pods on.</p>
-
 <p>Do the following steps on all nodes.</p>
-
 <p><strong>Get repository and add to apt.</strong></p>
-
 <p><code>curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -</code></p>
-
 <pre><code>cat &lt;&lt;EOF &gt; /etc/apt/sources.list.d/kubernetes.list
 deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 </code></pre>
-
 <p><strong>Update apt.</strong></p>
-
 <p><code>sudo apt-get update</code></p>
-
 <p><strong>Install kubernetes components.</strong></p>
-
 <p><code>sudo apt-get install -y docker.io kubelet kubeadm kubectl kubernetes-cni</code></p>
-
 <p><strong>To initialize the cluster, this step needs to be done only on the master node which in my case is 192.168.0.1.</strong></p>
-
 <p><code>kubeadm init</code></p>
-
 <p><strong>This will run for sometime and it will finally say something such as;</strong></p>
-
 <pre><code>Kubernetes master initialised successfully!
 
 You can now join any number of machines by running the following on each node:
 
 kubeadm join --token=&lt;secret_token&gt; 192.168.0.1
 </code></pre>
-
 <p><strong>The above kubeadm join command needs to be run on other nodes which needs to be added to the cluster.</strong></p>
-
 <p><strong>On the other nodes, install all kubernetes components, do not run kubeadm init, run the join command to add the node to the above created cluster.</strong></p>
-
 <p><code>kubeadm join --token=&lt;secret_token&gt; 192.168.0.1</code></p>
-
 <p><strong>Now we have a kubernetes cluster with one master node at 192.168.0.1 and 2 other nodes at 192.168.0.2 and 192.168.0.3.</strong></p>
-
 <p>To confirm if cluster is running, run <code>kubectl get nodes</code> on master to see other 2 nodes.</p>
-
 <h2 id="deploying-the-dockerized-api-on-the-cluster-and-exposing-it-outside-the-cluster"><strong>Deploying the Dockerized API on the cluster and exposing it outside the cluster</strong></h2>
-
 <p>Now that we have our Docker image and a running Kubernetes cluster, we can start deploying it.</p>
-
 <p><strong>On master run</strong></p>
-
 <p><code>kubectl run test-api --image=&lt;NAME FROM DOCKER HUB REPO IMAGE&gt; --replicas=2 --port=5000</code></p>
-
 <p><strong>The above command will deploy our API on the cluster.</strong></p>
-
 <p>Check the deployment using <code>kubectl get deployments</code> and <code>kubectl get pods</code></p>
-
 <p><strong>Now to expose the API hosts outside the master/other pods, we create a  NodePort Service.</strong></p>
-
 <p><code>kubectl expose deployment/api-test --type=&quot;NodePort&quot; --port 5000</code></p>
-
 <p><code>kubectl get services/api-test</code></p>
-
 <p><code>kubectl describe services/api-test</code></p>
-
 <p><strong>Locate NodePort port number form above command. This is needed to access from outside.</strong></p>
-
 <p><strong>To access the deployed API run a Curl to check if its actually running.</strong></p>
-
 <p><code>curl &lt;kubernetes_master_IP&gt;:&lt;NodePort Port&gt;</code></p>
-
 <p><strong>Run the curl a couple of times to observe that the requests are load balanced to different pods on different hosts.</strong></p>
-
 <h2 id="based-on-tutorials-from"><strong>Based on tutorials from:</strong></h2>
-
 <p><a href="http://containertutorials.com/docker-compose/flask-simple-app.html">http://containertutorials.com/docker-compose/flask-simple-app.html</a></p>
-
 <p><a href="http://linoxide.com/devops/setup-kubernetes-1-4-kubeadm-ubuntu/">http://linoxide.com/devops/setup-kubernetes-1-4-kubeadm-ubuntu/</a></p>
 
 

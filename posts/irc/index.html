@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.75.1" />
   <link rel="stylesheet" href="https://shank4804.github.io/css/bootstrap.min.css">
   
   
@@ -134,89 +134,78 @@ audio {
         
 
 <h1>Internet Relay Chat</h1>
-
-
 <p>Ever since I wanted to contribute to an open-source project, I was told on online forums to contact the specific IRC channels to ask questions and start contributing. That&rsquo;s fine. I&rsquo;ll do that. But I never understood what was IRC.</p>
-
-<h3 id="so-what-s-irc"><strong>So what&rsquo;s IRC?</strong></h3>
-
+<h3 id="so-whats-irc"><strong>So what&rsquo;s IRC?</strong></h3>
 <p>Wikipedia quotes &lsquo;Internet Relay Chat Protocol (IRCP) is an application layer protocol that facilitates communication in the form of text. The chat process works on a client/server networking model.&rsquo;
 In plain works, it&rsquo;s a chat app. But a chat app which you can use on a command line (GUI is also available. Don&rsquo;t worry :) )</p>
-
 <h3 id="why-and-who-uses-irc"><strong>Why and Who uses IRC?</strong></h3>
-
 <p>Suppose you want to send some information to someone or a group of people, you can do it through IRC. You can create &lsquo;chatrooms&rsquo; on the go, send messages etc. It&rsquo;s way easier to communicate. But the main advantage is all this can be done on the command line. This was/is is very useful when you are doing development and you are SSH&rsquo;d into a remote server and have only the command line at your disposal. You can login into your account and start sending messages all through the command line. From what I see, most open source people use IRC. Why? I guess it goes back to age of Linux when there were no fancy chat apps like Slack or WhatsApp to communicate.</p>
-
 <h3 id="setup"><strong>Setup</strong></h3>
-
 <ul>
-<li><p>Command Line: I use <a href="https://help.ubuntu.com/community/WeeChat">Weechat</a> (not wechat app) as my command line IRC client. To setup, follow the command below on a Ubuntu instance (Debian stuff).</p>
-
+<li>Command Line: I use <a href="https://help.ubuntu.com/community/WeeChat">Weechat</a> (not wechat app) as my command line IRC client. To setup, follow the command below on a Ubuntu instance (Debian stuff).
 <ul>
-<li><p>Add repo, get latest repo list, install.</p>
-
+<li>
+<p>Add repo, get latest repo list, install.</p>
 <p><code>sudo add-apt-repository -y ppa:nesthib/weechat-stable</code></p>
-
 <p><code>sudo apt-get update</code></p>
-
-<p><code>sudo apt-get install weechat -y</code></p></li>
-
-<li><p>Fire up Weechat.</p>
-
-<p><code>weechat</code></p></li>
-
-<li><p>You can start using it right away. But to save your channels
+<p><code>sudo apt-get install weechat -y</code></p>
+</li>
+<li>
+<p>Fire up Weechat.</p>
+<p><code>weechat</code></p>
+</li>
+<li>
+<p>You can start using it right away. But to save your channels
 (subscriptions),     you need register your nick name. Nick name is basically like username used in      apps. Choose user name by running the below command;</p>
-
-<p><code>/nick &lt;username&gt;</code></p></li>
-
-<li><p>Now we need to register this with a server. In my case I will use Freenode.       Freenode is like the server side guy who maintains your account.</p>
-
-<p><code>/connect chat.freenode.net</code></p></li>
-
-<li><p>Register using;</p>
-
-<p><code>/msg NickServ REGISTER &lt;password&gt; &lt;youremail@example.com&gt;</code></p></li>
-
-<li><p>You will get an email from Freenode with a command to run. It should look something like this</p>
-
-<p><code>/msg NickServ VERIFY REGISTER &lt;usernamae&gt; &lt;random stuff&gt;</code></p></li>
-
-<li><p>Once that is done, you are now a registered user. To login, you do this;</p>
-
 <p><code>/nick &lt;username&gt;</code></p>
-
-<p><code>/msg NickServ IDENTIFY &lt;username&gt; &lt;password&gt;</code></p></li>
-</ul></li>
+</li>
+<li>
+<p>Now we need to register this with a server. In my case I will use Freenode.       Freenode is like the server side guy who maintains your account.</p>
+<p><code>/connect chat.freenode.net</code></p>
+</li>
+<li>
+<p>Register using;</p>
+<p><code>/msg NickServ REGISTER &lt;password&gt; &lt;youremail@example.com&gt;</code></p>
+</li>
+<li>
+<p>You will get an email from Freenode with a command to run. It should look something like this</p>
+<p><code>/msg NickServ VERIFY REGISTER &lt;usernamae&gt; &lt;random stuff&gt;</code></p>
+</li>
+<li>
+<p>Once that is done, you are now a registered user. To login, you do this;</p>
+<p><code>/nick &lt;username&gt;</code></p>
+<p><code>/msg NickServ IDENTIFY &lt;username&gt; &lt;password&gt;</code></p>
+</li>
 </ul>
-
+</li>
+</ul>
 <p>That&rsquo;s it. You are now logged in. You can start conversing by running the following commands;</p>
-
 <ul>
-<li><p>To talk to another IRC username ;</p>
-
-<p><code>/query &lt;other's username&gt;</code></p></li>
-
-<li><p>To join a channel ;</p>
-
+<li>
+<p>To talk to another IRC username ;</p>
+<p><code>/query &lt;other's username&gt;</code></p>
+</li>
+<li>
+<p>To join a channel ;</p>
 <p><code>/join #&lt;channel name&gt;</code></p>
-
 <p>Example: <code>/join #linux</code> or <code>/join #openstack</code>.
-If the channel is not present, you can create with the same command as above.</p></li>
-
-<li><p>To scroll up and down the chat use page up and page down.</p></li>
-
-<li><p>To close from chat bot <code>/close</code></p></li>
-
-<li><p>To quit weechat <code>/exit</code></p></li>
-
-<li><p>GUI: Setting up commands are same as command line in IRC. I use Limechat for Mac and HexChat for Windows.</p></li>
+If the channel is not present, you can create with the same command as above.</p>
+</li>
+<li>
+<p>To scroll up and down the chat use page up and page down.</p>
+</li>
+<li>
+<p>To close from chat bot <code>/close</code></p>
+</li>
+<li>
+<p>To quit weechat <code>/exit</code></p>
+</li>
+<li>
+<p>GUI: Setting up commands are same as command line in IRC. I use Limechat for Mac and HexChat for Windows.</p>
+</li>
 </ul>
-
 <h3 id="final-words"><strong>Final words</strong></h3>
-
 <p>This simple tutorial is by no means a holistic view of what all weechat or IRC can do. But it&rsquo;s a good entry point to understand. To know more visit <a href="https://weechat.org/files/doc/devel/weechat_user.en.html">https://weechat.org/files/doc/devel/weechat_user.en.html</a></p>
-
 <p>**Also, you can contact me on IRC by <code>/query sshank</code> **</p>
 
 

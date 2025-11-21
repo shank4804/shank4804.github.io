@@ -1,0 +1,212 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.75.1" />
+  <link rel="stylesheet" href="https://shank4804.github.io/css/bootstrap.min.css">
+  
+  
+  <title>Product Insights #1: Hebbia | Shashank&#39;s Website</title>
+  <style>
+.container {
+  max-width: 700px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+  border-bottom: 1px solid #212529;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+}
+</style>
+</head>
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> About</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/posts/"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/photography"><i data-feather="camera"></i> Photography</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/resume"><i data-feather="file-text"></i> Resume</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/contact"><i data-feather="send"></i> Contact</a>
+  
+  </nav>
+</div>
+    <div class="container">
+      <main id="main">
+        
+
+<h1>Product Insights #1: Hebbia</h1>
+<p>I am starting a series where I break down AI products to understand what they are building, why it matters, and whether the business makes sense. First up: <a href="https://www.hebbia.com/" target="_blank">Hebbia</a>.</p>
+<h2 id="the-problem-an-auditability-crisis">The problem: An auditability crisis</h2>
+<p>Here&rsquo;s what makes Hebbia interesting. They are not solving a &ldquo;search&rdquo; problem. They are solving what I&rsquo;d call an auditability crisis.</p>
+<p>Private equity firms and law firms can&rsquo;t just throw documents into ChatGPT and trust whatever comes out. Every single claim needs to be traced back to a source document. One wrong citation in a deal memo or legal brief could mean millions in liability or a blown deal.</p>
+<p>The current workflow? Junior analysts manually opening 50+ PDFs, hitting CTRL+F for hours, copy-pasting excerpts into spreadsheets. If they are preparing for a supplier negotiation, they are going through 100+ documents to understand deal history, past pricing negotiations, and leverage points. It&rsquo;s tedious, error-prone, and expensive.</p>
+<p>That&rsquo;s the job Hebbia is trying to do.</p>
+<h2 id="the-product-structured-extraction">The product: Structured extraction</h2>
+<p>Hebbia&rsquo;s main product is called Matrix. What caught my attention is how they have designed the interface. It&rsquo;s not a chatbot. It&rsquo;s a grid-based reasoning system.</p>
+<p>Here&rsquo;s why that matters. The Matrix UI forces the AI to execute a specific extraction task for every cell in the grid. For example: &ldquo;Find the termination date in Document 12&rdquo; or &ldquo;Extract pricing terms from Document 47.&rdquo; This changes the interaction model from creative conversation to structured extraction.</p>
+<p>Companies upload their data (or integrate existing sources), and instead of asking free-form questions, users define what they want extracted across all documents. The AI then populates the grid with answers, each linked back to the source. And if needed, users can ask questions across the matrix and the answer references a row/column in the matrix which upon click traces back to the original document.</p>
+<p>The key difference from standard AI tools is that this isn&rsquo;t about getting a summary or a chat response. It&rsquo;s about getting verifiable data that can be audited. For high-stakes decisions, that&rsquo;s what matters.</p>
+<h2 id="how-does-this-actually-work-under-the-hood">How does this actually work under the hood?</h2>
+<p>From what I can piece together from publicly available information, instead of one giant prompt that processes all documents at once, the system breaks down the task into micro-tasks for each cell in the grid.</p>
+<p>Think of it like a map-reduce pattern. Each document gets processed independently for a specific extraction task, and the results get aggregated into the grid. This is different from standard retrieval-augmented generation (RAG), where you retrieve relevant chunks based on similarity score and hope the model synthesizes them correctly. If the document isn&rsquo;t in the chunk, it won&rsquo;t be included in the RAG context.</p>
+<p>The trade-off here is latency for accuracy. Processing 1,000 documents with this approach can take 30+ minutes because of hitting rate limits and need to batch requests. But the payoff is high recall across the entire dataset. Users aren&rsquo;t missing documents because of chunking strategies or retrieval ranking. They&rsquo;re systematically processing everything.</p>
+<p>For a PE analyst preparing a deal memo, waiting 30 minutes to get 100% coverage is worth it. Missing a critical clause because the RAG system didn&rsquo;t retrieve it is not.</p>
+<h2 id="whats-their-real-moat">What&rsquo;s their real moat?</h2>
+<p>This is where it gets interesting. I don&rsquo;t think Hebbia&rsquo;s moat is just about having better context or retrieval. With SOTA LLM models now offering millions of tokens of context, the cost of &ldquo;reading&rdquo; 100 documents is dropping to near zero.</p>
+<p>My hypothesis is that Hebbia&rsquo;s real defensibility lies in vertical reasoning. They are not just fine-tuning models to understand industry specific facts. They are teaching the models how to reason like a lawyer or a PE analyst.</p>
+<p>For example, understanding how a lawyer breaks down a contract or how a PE firm evaluates termination clauses. That kind of reasoning pattern is harder to replicate than just feeding documents into a large context window.</p>
+<p>If they have built a reasoning layer that stays ahead of what GPT-5 or other SOTA models can do natively, they have a moat. If they haven&rsquo;t, they are vulnerable.</p>
+<h2 id="the-big-risk-context-commoditization">The big risk: Context commoditization</h2>
+<p>Here&rsquo;s the risk I see. As context windows grow and models get better at native reasoning, the technical advantage Hebbia has today could evaporate.</p>
+<p>If a model provider launches a new SOTA model with a billion-token context window and adds a grid view feature, what&rsquo;s stopping users from just using that? The cost of processing drops to zero, and the interface gets commoditized.</p>
+<p>Hebbia&rsquo;s bet is that their vertical reasoning layer and purpose-built workflows for specific industries will keep them ahead. But that&rsquo;s a constant race. They need to keep innovating on the reasoning side, not just the interface side.</p>
+<h2 id="pricing-and-business-model">Pricing and business model</h2>
+<p>Hebbia doesn&rsquo;t publicly share pricing. Based on the use case, I would guess they are doing per-seat pricing with generous query limits. This manages their token costs (COGS) while keeping users engaged.</p>
+<p>They might also charge based on data volume uploaded. That would create multiple revenue drivers: more seats, more queries, more data. It keeps margins healthy as usage scales.</p>
+<p>The business model makes sense if they can land big enterprise contracts. A PE firm or law firm paying $50K-$200K annually for this tool is reasonable if it saves hundreds of analyst hours per deal.</p>
+<h2 id="final-take">Final take</h2>
+<p>I am conditionally bullish on Hebbia. The interface is right. The grid-based extraction model is the correct form factor for high-stakes enterprise work. The problem they are solving is real and expensive.</p>
+<p>If their advantage is purely in the interface and workflow design, that&rsquo;s defensible for now but gets commoditized as foundation models improve. If they have built a genuine reasoning layer that understands how domain experts think, they are building something durable.</p>
+<p>The success of Hebbia depends on whether they can stay ahead of whatever SOTA model comes next. That&rsquo;s a hard race to win, but if anyone can do it, it&rsquo;s a team laser-focused on a vertical with deep domain expertise.</p>
+<p>The market is there. The pain is real. Now it&rsquo;s about execution.</p>
+
+
+
+      </main>
+    </div>
+    
+<footer id="footer" class="mt-auto text-center text-muted">
+  <div class="container">
+    Made with <a href="https://gohugo.io/">Hugo</a> and Golang
+  </div>
+</footer>
+
+    <script src="https://shank4804.github.io/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+
+    
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-27970776-2', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  </body>
+</html>

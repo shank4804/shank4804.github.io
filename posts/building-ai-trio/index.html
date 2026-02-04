@@ -1,0 +1,264 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.75.1" />
+  <link rel="stylesheet" href="https://shank4804.github.io/css/bootstrap.min.css">
+  
+  
+  <title>Building AI Trio: A Multi-LLM Debate Platform Built with AI-Assisted Development | Shashank&#39;s Website</title>
+  <style>
+.container {
+  max-width: 700px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+  border-bottom: 1px solid #212529;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+}
+</style>
+</head>
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> About</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/posts/"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/photography"><i data-feather="camera"></i> Photography</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/resume"><i data-feather="file-text"></i> Resume</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/contact"><i data-feather="send"></i> Contact</a>
+  
+  </nav>
+</div>
+    <div class="container">
+      <main id="main">
+        
+
+<h1>Building AI Trio: A Multi-LLM Debate Platform Built with AI-Assisted Development</h1>
+<p>I kept running into the same frustration: every LLM has blind spots. Ask GPT a question, you get GPT&rsquo;s particular style and biases. Same with Claude, same with Gemini. The answers aren&rsquo;t wrong, but they&rsquo;re shaped by each model&rsquo;s training, tendencies, and assumptions.</p>
+<p>I wanted a tool where I could ask all three the same question simultaneously and watch them debate each other - like a group chat where AI models challenge each other&rsquo;s reasoning.</p>
+<p>But I also had a second question I wanted to answer: Can a PM really go from idea to working prototype using AI-assisted development, without a large engineering team?</p>
+<p>So I built <a href="https://ai-trio.cloud" target="_blank">AI Trio</a> to answer both questions.</p>
+<p><img src="/images/ai-trio-home.png" alt="AI Trio homepage - Chat with ChatGPT, Gemini, and Claude in one place"></p>
+<p>Spoiler: The answer to the second question is &ldquo;yes, but&hellip;&rdquo; and that &ldquo;but&rdquo; is where things get interesting.</p>
+<h2 id="the-problem-single-model-blind-spots">The Problem: Single-Model Blind Spots</h2>
+<p>When you ask ChatGPT a question, you get ChatGPT&rsquo;s answer. It sounds authoritative. It&rsquo;s well-written. But it carries that model&rsquo;s particular biases, knowledge gaps, and reasoning patterns.</p>
+<p>The same applies to Claude, Gemini, or any other model. Each has strengths and weaknesses. Each makes different assumptions. Each emphasizes different tradeoffs.</p>
+<p>For simple factual questions, this doesn&rsquo;t matter much. But for ambiguous decisions - &ldquo;Should I buy or lease a car?&rdquo;, &ldquo;What&rsquo;s the right architecture for this system?&rdquo;, &ldquo;How should I approach this negotiation?&rdquo; - a single model&rsquo;s answer hides the complexity of the decision.</p>
+<p>You&rsquo;re not getting the full picture. You&rsquo;re getting one perspective presented as the answer.</p>
+<h2 id="the-product-multi-model-debate">The Product: Multi-Model Debate</h2>
+<p>AI Trio puts GPT-5, Gemini, and Claude in the same conversation. You ask a question, and all three respond simultaneously. They can see each other&rsquo;s answers and challenge each other&rsquo;s reasoning.</p>
+<p><img src="/images/ai-trio-chat.png" alt="AI Trio Group Chat - three models responding to the same question with different perspectives">
+<em>A sample chat session: asking &ldquo;Should I buy or lease a new car?&rdquo; Each model frames the tradeoffs differently - GPT focuses on ownership vs. payments, Gemini adds driving habits, Claude emphasizes financial situation.</em></p>
+<p><strong>Core features:</strong></p>
+<ul>
+<li><strong>Multi-Model Streaming:</strong> Real-time responses from three models simultaneously, each aware of the others' answers</li>
+<li><strong>Voice Room:</strong> Talk to all three models at once - like a conference call with AI. You speak, they all respond, and you can have a back-and-forth conversation</li>
+<li><strong>Context-Aware Web Search:</strong> Automatic web search when models detect they need current information</li>
+<li><strong>Comparison Mode:</strong> Side-by-side evaluation of responses and reasoning styles</li>
+<li><strong>Multi-Layer Safety:</strong> Defense-in-depth approach with prompt injection detection, output validation, and rate limiting</li>
+</ul>
+<p>The key insight is that disagreement reveals more than consensus. When all three models align, it confirms the obvious. When they diverge, it surfaces hidden tradeoffs and assumptions that single answers mask.</p>
+<h2 id="how-it-works">How It Works</h2>
+<p>The architecture is built around real-time streaming. When you submit a question, it fans out to all three model APIs simultaneously. Responses stream back in parallel and render in a shared conversation view where each model can reference what the others said.</p>
+<p>Voice Room uses speech-to-text to capture your input, sends it to all three models, and streams back audio responses. It feels like a conference call where you&rsquo;re talking to three different experts at once.</p>
+<p>The safety layer runs in parallel with responses - checking for prompt injection attempts, validating outputs, and enforcing rate limits to prevent abuse.</p>
+<h2 id="the-development-journey-ai-assisted-building">The Development Journey: AI-Assisted Building</h2>
+<p>I built this over a few weekends using Claude Code with Opus 4.5. My workflow was deliberately AI-driven with human oversight:</p>
+<ol>
+<li>Ideate a feature with ChatGPT</li>
+<li>Write high-level requirements, asking ChatGPT to generate a clear PRD</li>
+<li>Feed the PRD to Claude Code with Opus 4.5</li>
+<li>Review, test, iterate</li>
+</ol>
+<p><strong>Results:</strong> Roughly 95% of specified features worked on first generation. UI styling often exceeded my expectations.</p>
+<p>But here&rsquo;s what &ldquo;95%&rdquo; hides:</p>
+<ul>
+<li>Edge cases weren&rsquo;t in my PRD, so they weren&rsquo;t in the code</li>
+<li>Security considerations required explicit specification</li>
+<li>Architecture was sound only because I designed it - the AI executed, it didn&rsquo;t architect</li>
+</ul>
+<p>The real shift: <strong>The bottleneck has moved from &ldquo;writing syntax&rdquo; to &ldquo;specifying requirements completely.&quot;</strong> If you can write a comprehensive PRD that anticipates edge cases and scale, you can ship remarkably fast. But that &ldquo;if&rdquo; is doing heavy lifting.</p>
+<p><strong>What still required human judgment:</strong></p>
+<ul>
+<li>Deployment configuration and CI/CD pipelines</li>
+<li>Cost monitoring and optimization</li>
+<li>Security architecture design</li>
+</ul>
+<p>These aren&rsquo;t minor details - they&rsquo;re the difference between a demo and a production app. AI accelerated the 80%, but the final 20% still required expertise.</p>
+<h2 id="product-insights">Product Insights</h2>
+<h3 id="disagreement-as-a-feature">Disagreement as a Feature</h3>
+<p>Early user feedback revealed something surprising: the value wasn&rsquo;t just getting multiple perspectives - it was seeing where and why models diverged.</p>
+<p>For simple questions (&ldquo;What&rsquo;s the capital of France?&quot;), three identical answers just add noise. But for ambiguous decisions, watching models emphasize different tradeoffs exposes the assumptions hidden in each response.</p>
+<p>The caveat: This only works when users can evaluate the disagreement. For highly technical questions outside their expertise, three conflicting answers create decision paralysis, not clarity.</p>
+<p><strong>Key learning:</strong> Multi-model debates expose tradeoffs and assumptions - they&rsquo;re a &ldquo;second opinion generator,&rdquo; not a replacement for expertise.</p>
+<h3 id="the-economics-tension-pricing-predictability">The Economics Tension: Pricing Predictability</h3>
+<p>Building this surfaced a core pricing tradeoff in AI products: pay-per-token is fair, but it&rsquo;s not predictable.</p>
+<p>I kept second-guessing product decisions: &ldquo;Should I enable web search?&rdquo; &ldquo;What if someone spams it and my costs explode?&rdquo;</p>
+<p>With a 10-messages/day per user limit, roughly 500 tokens per request/response, and three models queried per message, I estimated about $0.01 to $0.03 per user query (depending on the model mix). At max usage (around 300 queries/month), that&rsquo;s $3 to $9 per user per month in API costs alone.</p>
+<p>The catch: Token usage is hard to police. One detailed question that triggers a long answer can easily push costs to 3x the baseline.</p>
+<p>That experience convinced me a hybrid pricing model is the right default for most AI products:</p>
+<ul>
+<li>A base tier with included usage (a predictable floor)</li>
+<li>Usage-based pricing after the included amount (fair scaling)</li>
+<li>User-set spending caps (reduces &ldquo;bill shock&rdquo; anxiety)</li>
+</ul>
+<p>Stripe&rsquo;s <a href="https://stripe.com/resources/more/pricing-strategies-for-ai-companies" target="_blank">write-up on AI pricing strategies</a> articulates this hybrid approach well.</p>
+<h3 id="competitive-landscape-and-future-directions">Competitive Landscape and Future Directions</h3>
+<p>Most multi-model tools today are either simple API aggregators (pick a model, get a response) or comparison tools (run the same prompt through multiple models and see results side-by-side).</p>
+<p>AI Trio is different because the models are in conversation with each other. They see what the others said. They can disagree, build on each other&rsquo;s points, or challenge assumptions. That changes the interaction from &ldquo;get multiple answers&rdquo; to &ldquo;watch a debate unfold.&rdquo;</p>
+<p>Where could this go? A few directions seem promising:</p>
+<ul>
+<li><strong>Specialized model panels:</strong> Instead of three general-purpose models, assemble panels of domain-specific models (a legal expert, a financial analyst, a technical architect) for complex decisions</li>
+<li><strong>Structured disagreement:</strong> Automatically surface where models diverge and why, rather than making users parse through three full responses</li>
+<li><strong>Consensus detection:</strong> Flag when all models agree (high confidence) vs. when they diverge (worth investigating further)</li>
+</ul>
+<p>The underlying bet is that multi-model interfaces become more valuable as models get more capable but remain differently biased. More powerful models with different blind spots means more value in seeing them debate.</p>
+<h2 id="the-takeaway">The Takeaway</h2>
+<p>The barrier to validating product ideas has collapsed. PMs who can write clear requirements can now build functional prototypes in days, not weeks.</p>
+<p>But the prototype is just the beginning. AI ships exactly what you specify and quietly skips what you don&rsquo;t. Productization still depends on human judgment around security, scale, reliability, and UX.</p>
+<p>The tools have changed. The hard problems haven&rsquo;t - they&rsquo;ve just shifted from &ldquo;can we build it?&rdquo; to &ldquo;can we trust it enough to ship?&rdquo;</p>
+<hr>
+<p>Check out AI Trio: <a href="https://ai-trio.cloud" target="_blank">ai-trio.cloud</a></p>
+<p>(Personal side project built for learning purposes)</p>
+
+
+
+      </main>
+    </div>
+    
+<footer id="footer" class="mt-auto text-center text-muted">
+  <div class="container">
+    Made with <a href="https://gohugo.io/">Hugo</a> and Golang
+  </div>
+</footer>
+
+    <script src="https://shank4804.github.io/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+
+    
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-27970776-2', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  </body>
+</html>

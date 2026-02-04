@@ -165,26 +165,5 @@ dpkg -s vim | grep &#39;Version&#39; #should be greater than 7.</description>
 So what&amp;rsquo;s IRC? Wikipedia quotes &amp;lsquo;Internet Relay Chat Protocol (IRCP) is an application layer protocol that facilitates communication in the form of text. The chat process works on a client/server networking model.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://shank4804.github.io/posts/ai-trio-linkedin-article-v2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://shank4804.github.io/posts/ai-trio-linkedin-article-v2/</guid>
-      <description>Title: Beyond &amp;ldquo;Vibe Coding&amp;rdquo;: How I Built a Multi-LLM Debate Platform with Opus 4.5
-I kept running into the same frustration: every LLM has blind spots. Ask GPT a question, you get GPT&amp;rsquo;s particular style and biases. Same with Claude, same with Gemini. I wanted a tool where I could ask all three the same question simultaneously and watch them debate each other—like a group chat where AI models challenge each other&amp;rsquo;s reasoning.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://shank4804.github.io/posts/ai-trio-linkedin-post-v2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://shank4804.github.io/posts/ai-trio-linkedin-post-v2/</guid>
-      <description>Ever notice how asking ChatGPT vs Claude the same question gives you completely different answers? Not just in style, but in substance, assumptions, and blind spots.
-That’s why I built AI Trio (https://ai-trio.cloud ): ask GPT-5, Gemini, and Claude the same question simultaneously and watch them respond and debate in a group chat format.
-I built this over a few weekends using Claude Code + Opus 4.5, treating it as an experiment in the new AI-driven product development workflow to answer: “Could I really go from PRD to a working prototype with AI handling most of the implementation?</description>
-    </item>
-    
   </channel>
 </rss>

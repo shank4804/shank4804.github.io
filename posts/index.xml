@@ -13,8 +13,8 @@
       <pubDate>Sat, 19 Sep 2026 00:00:00 -0700</pubDate>
       
       <guid>https://shashankkumar.me/posts/jev/</guid>
-      <description>A lot of the work inside an AI application comes down to small decisions. Which team should handle this ticket? Which tool should run next? Is there enough information to proceed?
-What caught my attention about Jev from TypeSafe AI is that it makes those decisions the product. You give it context and defined questions. It returns structured answers that software can use directly.
+      <description>Which team should handle this ticket? Which tool should an agent run next? Is there enough information to proceed?
+A lot of AI application work comes down to small decisions like these. What caught my attention about Jev from TypeSafe AI is that it makes those decisions the product: give it context and defined questions, and get structured answers that code can act on.
 After Hebbia, I wanted to look at another company changing how software uses AI.</description>
     </item>
     

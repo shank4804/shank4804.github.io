@@ -1,0 +1,384 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Projects | Shashank&#39;s Website</title>
+
+  <meta name="description" content="AI products I designed and built myself - multi-model debate, agentic incident triage, RAG personalization - and what building them taught me about shipping AI.">
+  <link rel="canonical" href="https://shashankkumar.me/projects/">
+
+  <meta property="og:site_name" content="Shashank&#39;s Website">
+  <meta property="og:title" content="Projects">
+  <meta property="og:description" content="AI products I designed and built myself - multi-model debate, agentic incident triage, RAG personalization - and what building them taught me about shipping AI.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shashankkumar.me/projects/">
+  <meta property="og:image" content="https://shashankkumar.me/images/ai-trio-home.png">
+  <meta property="article:published_time" content="2026-09-18T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects">
+  <meta name="twitter:description" content="AI products I designed and built myself - multi-model debate, agentic incident triage, RAG personalization - and what building them taught me about shipping AI.">
+  <meta name="twitter:image" content="https://shashankkumar.me/images/ai-trio-home.png">
+  <meta name="twitter:creator" content="@sshank_">
+
+  <link rel="icon" href="https://shashankkumar.me/favicon.ico" sizes="any">
+  <link rel="icon" href="https://shashankkumar.me/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://shashankkumar.me/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="https://shashankkumar.me/css/bootstrap.min.css">
+  <style>
+.container {
+  max-width: 700px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+  border-bottom: 1px solid #212529;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+}
+
+ 
+.resume-contact {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 0.75em;
+}
+.resume-actions {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.resume-meta {
+  display: block;
+  color: #6c757d;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+#main h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5em;
+}
+
+ 
+.project {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1.25em 1.5em;
+  margin-bottom: 1.75em;
+}
+.project h3 {
+  margin-top: 0;
+  margin-bottom: 0.15em;
+  font-size: 1.3rem;
+}
+.project .project-tagline {
+  color: #6c757d;
+  margin-bottom: 1em;
+}
+.project h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6c757d;
+  margin-top: 1.1em;
+  margin-bottom: 0.35em;
+}
+.project p {
+  margin-bottom: 0.6em;
+}
+.project-stack {
+  font-size: 0.9em;
+  color: #495057;
+}
+.project-links {
+  margin-top: 1.1em;
+}
+.project-links a {
+  margin-right: 0.4em;
+  margin-bottom: 0.3em;
+}
+.project-status {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+  border-radius: 999px;
+  padding: 0.1em 0.7em;
+  vertical-align: middle;
+}
+.project img {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+.page-intro {
+  color: #495057;
+  margin-bottom: 2em;
+}
+</style>
+
+</head>
+
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> About</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/posts/"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+      
+      
+      
+      
+       
+        
+        
+      
+    
+    
+    <a class="nav-link nav-link-active" href="/projects"><i data-feather="box"></i> Projects</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/photography"><i data-feather="camera"></i> Photography</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/resume"><i data-feather="file-text"></i> Resume</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/contact"><i data-feather="send"></i> Contact</a>
+  
+  </nav>
+</div>
+    <div class="container">
+      <main id="main">
+        
+
+<h1>Projects</h1>
+<p class="page-intro">
+These are products I designed, built and shipped on my own time. I build them with AI coding
+assistants, which I think is worth stating plainly rather than hiding: the interesting part of
+this work is no longer typing the syntax, it is specifying the thing completely enough that it
+survives contact with real users. Each entry below says what the product does, what I decided,
+and what building it taught me about AI products.
+</p>
+<div class="project">
+<h3 id="ai-trio-span-classproject-statusmulti-model-debatespan">AI Trio <span class="project-status">multi-model debate</span></h3>
+<p class="project-tagline">GPT-5, Gemini and Claude in one conversation, arguing with each other.</p>
+<p><strong>The problem.</strong> Ask one model an ambiguous question and you get one model&rsquo;s answer, presented
+with total confidence. Its blind spots are invisible because nothing contradicts them.</p>
+<p><strong>What I built.</strong> A question fans out to all three models simultaneously. They stream back in
+parallel into a shared conversation where each can see and challenge what the others said.
+A Voice Room lets you talk to all three at once, and a safety layer runs alongside responses
+doing prompt-injection detection, output validation and rate limiting.</p>
+<p><strong>The decision that mattered.</strong> Treating <em>disagreement</em> as the product rather than a defect.
+Most multi-model tools aggregate or compare; putting the models in conversation changes the
+interaction from &ldquo;get three answers&rdquo; to &ldquo;watch a debate,&rdquo; which is what actually surfaces the
+hidden tradeoffs in a decision.</p>
+<p><strong>What it taught me.</strong> Roughly 95% of specified features worked on first generation — but that
+number hides everything not in the spec. Edge cases and security had to be named explicitly, and
+the architecture was sound only because I designed it. Deployment, cost monitoring and security
+architecture still needed me. The bottleneck moved from writing syntax to specifying requirements
+completely. Running it also taught me why pay-per-token pricing is fair but unpredictable, and
+pushed me toward hybrid pricing with a predictable floor and user-set spending caps.</p>
+<p class="project-stack"><strong>Stack:</strong> GPT-5, Gemini, Claude APIs · real-time streaming · speech-to-text · built with Claude Code</p>
+<p class="project-links">
+<a class="btn btn-outline-dark btn-sm" href="/posts/building-ai-trio/">Read the full write-up</a>
+</p>
+</div>
+<div class="project">
+<h3 id="fashionmateai-span-classproject-statuslivespan">FashionMateAI <span class="project-status">live</span></h3>
+<p class="project-tagline">A wardrobe assistant that remembers your closet and your taste.</p>
+<p><strong>The problem.</strong> Style advice from a general model is generic, because it knows nothing about
+what you actually own or what you have worn and liked.</p>
+<p><strong>What I built.</strong> A GPT-4o assistant over a LlamaIndex retrieval layer, combining multi-turn
+memory with retrieval-augmented personalization so recommendations are grounded in your actual
+closet rather than in fashion generalities. Built as the capstone for Stanford Continuing
+Studies' <em>Large Language Models for Business with Python</em>.</p>
+<p><strong>The decision that mattered.</strong> Putting the wardrobe in a retrieval layer instead of the prompt.
+Personalization that lives in context windows evaporates; personalization that lives in an index
+compounds as the closet grows.</p>
+<p class="project-stack"><strong>Stack:</strong> GPT-4o · LlamaIndex · RAG · multi-turn memory</p>
+<p class="project-links">
+<a class="btn btn-outline-dark btn-sm" href="https://fashionmate-dev-frontend.onrender.com/" target="_blank" rel="noopener">Try the demo</a>
+</p>
+</div>
+<div class="project">
+<h3 id="serviceopsai-span-classproject-statusagentic-co-pilotspan">ServiceOpsAI <span class="project-status">agentic co-pilot</span></h3>
+<p class="project-tagline">Incident triage for SREs, in minutes instead of hours.</p>
+<p><strong>The problem.</strong> An SRE opening a page at 3am spends most of the incident just assembling
+context — which service, which recent change, which runbook, what happened last time.</p>
+<p><strong>What I built.</strong> An agentic LLM co-pilot that uses RAG over operational knowledge, function
+calling into live systems, and structured reasoning to assemble that context and propose a triage
+path. Built as the capstone for Stanford Continuing Studies' <em>Generative AI for Product Managers</em>.</p>
+<p><strong>The decision that mattered.</strong> Scoping it to triage rather than remediation. The agent assembles
+evidence and proposes; the human still acts. In an incident, a confidently wrong autonomous action
+is far more expensive than a slow one.</p>
+<p class="project-stack"><strong>Stack:</strong> Agentic LLM orchestration · RAG · function calling · structured reasoning</p>
+<p class="project-links">
+<a class="btn btn-outline-dark btn-sm" href="https://docs.google.com/presentation/d/1y0pgSojQAl_C9oGIgjTkXzXOot1R6ZHjVn_L4zF6htQ/edit?usp=sharing" target="_blank" rel="noopener">See the deck</a>
+</p>
+</div>
+<div class="project">
+<h3 id="remainderai-span-classproject-statusevals-firstspan">Remainder.AI <span class="project-status">evals-first</span></h3>
+<p class="project-tagline">Say it once in plain English; get reminded on the right schedule.</p>
+<p><strong>The problem.</strong> Reminders are easy to set and easy to ignore. What people actually want is a
+sequence — a nudge now, a firmer one later, a final one before it matters — and nobody wants to
+configure that by hand.</p>
+<p><strong>What I built.</strong> An assistant that turns natural-language input into multi-stage email reminder
+schedules using GPT-5 function calling, with an evaluation framework built on AI-as-judge
+methodology to measure whether the schedules it produced were actually sensible.</p>
+<p><strong>The decision that mattered.</strong> Building the evals framework alongside the feature rather than
+after it. Scheduling quality is subjective and silent — it fails by being slightly wrong in ways
+no exception ever surfaces — so without a judge there is no signal at all.</p>
+<p class="project-stack"><strong>Stack:</strong> GPT-5 · function calling · AI-as-judge evals · email scheduling</p>
+</div>
+<div class="project">
+<h3 id="careerschatai-span-classproject-statusguidance-platformspan">CareersChatAI <span class="project-status">guidance platform</span></h3>
+<p class="project-tagline">Turning a vague career question into a concrete plan.</p>
+<p><strong>The problem.</strong> People arrive at career decisions with fuzzy intent — &ldquo;should I move into
+product?&rdquo; — and generic advice cannot translate that into next steps specific enough to act on.</p>
+<p><strong>What I built.</strong> An LLM-driven platform that interprets user intent and maps it to curated
+resources and a concrete action plan, rather than returning prose advice.</p>
+<p><strong>The decision that mattered.</strong> Constraining the output to a curated resource set instead of
+letting the model free-associate. A plan you can start on Monday beats an eloquent paragraph.</p>
+<p class="project-stack"><strong>Stack:</strong> LLM intent classification · curated retrieval · action planning</p>
+<p class="project-links">
+<a class="btn btn-outline-dark btn-sm" href="https://www.youtube.com/watch?v=Vx2xSOJgs0o" target="_blank" rel="noopener">Watch the demo</a>
+</p>
+</div>
+
+
+
+      </main>
+    </div>
+    
+<footer id="footer" class="mt-auto text-center text-muted">
+  <div class="container">
+    Made with <a href="https://gohugo.io/">Hugo</a> and Golang
+  </div>
+</footer>
+
+    <script src="https://shashankkumar.me/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+
+    
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-27970776-2', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  </body>
+</html>

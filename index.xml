@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shashank&#39;s Website</title>
-    <link>https://shank4804.github.io/</link>
-    <description>Recent content on Shashank&#39;s Website</description>
+    <title>Shashank Kumar Shankar on Shashank&#39;s Website</title>
+    <link>https://shashankkumar.me/</link>
+    <description>Recent content in Shashank Kumar Shankar on Shashank&#39;s Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Feb 2026 06:10:01 +0000</lastBuildDate><atom:link href="https://shank4804.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Feb 2026 06:10:01 +0000</lastBuildDate><atom:link href="https://shashankkumar.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Projects</title>
+      <link>https://shashankkumar.me/projects/</link>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://shashankkumar.me/projects/</guid>
+      <description>These are products I designed, built and shipped on my own time. I build them with AI coding assistants, which I think is worth stating plainly rather than hiding: the interesting part of this work is no longer typing the syntax, it is specifying the thing completely enough that it survives contact with real users. Each entry below says what the product does, what I decided, and what building it taught me about AI products.</description>
+    </item>
+    
     <item>
       <title>Building AI Trio: A Multi-LLM Debate Platform Built with AI-Assisted Development</title>
-      <link>https://shank4804.github.io/posts/building-ai-trio/</link>
+      <link>https://shashankkumar.me/posts/building-ai-trio/</link>
       <pubDate>Tue, 03 Feb 2026 06:10:01 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/building-ai-trio/</guid>
+      <guid>https://shashankkumar.me/posts/building-ai-trio/</guid>
       <description>I kept running into the same frustration: every LLM has blind spots. Ask GPT a question, you get GPT&amp;rsquo;s particular style and biases. Same with Claude, same with Gemini. The answers aren&amp;rsquo;t wrong, but they&amp;rsquo;re shaped by each model&amp;rsquo;s training, tendencies, and assumptions.
 I wanted a tool where I could ask all three the same question simultaneously and watch them debate each other - like a group chat where AI models challenge each other&amp;rsquo;s reasoning.</description>
     </item>
     
     <item>
       <title>Product Insights #1: Hebbia</title>
-      <link>https://shank4804.github.io/posts/product-insights-1-hebbia/</link>
+      <link>https://shashankkumar.me/posts/product-insights-1-hebbia/</link>
       <pubDate>Thu, 20 Nov 2025 06:10:01 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/product-insights-1-hebbia/</guid>
+      <guid>https://shashankkumar.me/posts/product-insights-1-hebbia/</guid>
       <description>I am starting a series where I break down AI products to understand what they are building, why it matters, and whether the business makes sense. First up: Hebbia - The AI platform for finance.
 The problem: An auditability crisis Here&amp;rsquo;s what makes Hebbia interesting. They are not solving a &amp;ldquo;search&amp;rdquo; problem. They are solving what I&amp;rsquo;d call an auditability crisis.
 Private equity firms and law firms can&amp;rsquo;t just throw documents into ChatGPT and trust whatever comes out.</description>
@@ -30,10 +39,10 @@ Private equity firms and law firms can&amp;rsquo;t just throw documents into Cha
     
     <item>
       <title>Thoughts on Product Management</title>
-      <link>https://shank4804.github.io/posts/thoughts-on-product-management/</link>
+      <link>https://shashankkumar.me/posts/thoughts-on-product-management/</link>
       <pubDate>Mon, 12 Feb 2024 06:10:01 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/thoughts-on-product-management/</guid>
+      <guid>https://shashankkumar.me/posts/thoughts-on-product-management/</guid>
       <description>My previous blog post was almost 2 years ago on my thoughts on why I am switching my career from engineering to product management.
 Now, its been 2 years into the PM job while surviving layoffs in the tech industry (till now atleast).
 Given that, I have some perspectives on this role (mostly at Microsoft) and what it could be going forward.
@@ -42,31 +51,31 @@ Product management experience so far Product management is very different across
     
     <item>
       <title>Career transition to Product</title>
-      <link>https://shank4804.github.io/posts/switching-to-product-management/</link>
+      <link>https://shashankkumar.me/posts/switching-to-product-management/</link>
       <pubDate>Mon, 18 Apr 2022 06:10:01 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/switching-to-product-management/</guid>
+      <guid>https://shashankkumar.me/posts/switching-to-product-management/</guid>
       <description>Since Jan 2022, I switched careers from being an SDE to PM. I wanted to share my thoughts here on &amp;ldquo;Why&amp;rdquo; did want to switch careers:
 What do I want to do in my career? As of July 11th 2022, I would hit 6+ years in Software Engineering career. I would have learnt a lot in semiconductors (Intel), SaaS (Workday), ML platforms (AWS). I would be at a point in my career where I have been good at how to build a product.</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://shank4804.github.io/photography/</link>
+      <title>Photography</title>
+      <link>https://shashankkumar.me/photography/</link>
       <pubDate>Tue, 13 Oct 2020 07:58:41 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/photography/</guid>
-      <description> Photography I capture the intersection of Abstract, Nature, and Urban life through my lens.
+      <guid>https://shashankkumar.me/photography/</guid>
+      <description> I capture the intersection of Abstract, Nature, and Urban life through my lens.
  Open full portfolio in new window →
  </description>
     </item>
     
     <item>
       <title>Started a new podcast around tech, startups, venture capital</title>
-      <link>https://shank4804.github.io/posts/started-tech-startup-venture-podcast/</link>
+      <link>https://shashankkumar.me/posts/started-tech-startup-venture-podcast/</link>
       <pubDate>Sun, 04 Oct 2020 06:10:01 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/started-tech-startup-venture-podcast/</guid>
+      <guid>https://shashankkumar.me/posts/started-tech-startup-venture-podcast/</guid>
       <description>[Update as of April 2022] Shutdown the podcast because of following reasons:   Super tedious to edit / create videos + audio.
   Less viewership.
   Didn&amp;rsquo;t enjoy doing it anymore because of 1 and 2 where the feedback loop to do it further was not there.
@@ -75,10 +84,10 @@ What do I want to do in my career? As of July 11th 2022, I would hit 6+ years in
     
     <item>
       <title>AngelList&#39;s Naval Ravikant: How to Get Rich (without getting lucky)</title>
-      <link>https://shank4804.github.io/posts/naval-ravikant-how-to-get-rich/</link>
+      <link>https://shashankkumar.me/posts/naval-ravikant-how-to-get-rich/</link>
       <pubDate>Tue, 18 Feb 2020 06:10:01 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/naval-ravikant-how-to-get-rich/</guid>
+      <guid>https://shashankkumar.me/posts/naval-ravikant-how-to-get-rich/</guid>
       <description>Amazing series of tweets on wealth generation by Naval Ravikant who is the founder of AngelList and an investor in a host of successful companies.
 The podcast discussing these tweets:
 And the link to the original thread of tweets:
@@ -87,10 +96,10 @@ Seek wealth, not money or status. Wealth is having assets that earn while you sl
     
     <item>
       <title>Overview of Google&#39;s Machine Learning Crash Course - Part 1</title>
-      <link>https://shank4804.github.io/posts/overview-ml-crash-course-1/</link>
+      <link>https://shashankkumar.me/posts/overview-ml-crash-course-1/</link>
       <pubDate>Mon, 12 Aug 2019 06:02:46 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/overview-ml-crash-course-1/</guid>
+      <guid>https://shashankkumar.me/posts/overview-ml-crash-course-1/</guid>
       <description>Helps do 3 things better for Software Engineers:
   Reduce time programming: Move from rule based program (logic) to writing programs where we feed it a data and we get results from it which are closer to the result.
   Customize products for specific users: Ex: Instead of writing two programs for English / French users, just write a general ML program and feed it English / French to generate language specific results.</description>
@@ -98,20 +107,20 @@ Seek wealth, not money or status. Wealth is having assets that earn while you sl
     
     <item>
       <title>Overview of Learning How to Learn Coursera course</title>
-      <link>https://shank4804.github.io/posts/overview-learning-how-to-learn-coursera/</link>
+      <link>https://shashankkumar.me/posts/overview-learning-how-to-learn-coursera/</link>
       <pubDate>Fri, 05 Apr 2019 06:59:15 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/overview-learning-how-to-learn-coursera/</guid>
+      <guid>https://shashankkumar.me/posts/overview-learning-how-to-learn-coursera/</guid>
       <description>This is my notes from the course Learning How to Learn from Coursera
  Quick look at concepts consolidated from the course  Focused mode vs diffused mode 25 minute Pomodoro method Long term vs Short term memory Spaced repeated practice to move from Short to Long Sleep well Chunking Releated practice Mini-testing Recall Illusion of Competence Overlearning Deliberate practise Einstellung Interleaving Procrastination Procrastination as a Habit Habit made of cue, routine, reward, belief Initial start is hard Process vs Product Use auto-drive zombie mode (blindy do) Activity tracking before sleep for next day Pomodoro early in the morning Conjure visual images to remember General Problem solving:  Apply known technique Modify known technique Focused brute force thinking Diffused related thinking Repeat until solution   Exercise best method for brain enhancement Visual metaphor (Mud + JSON Marshall) More Genius less creative Imposter Syndrome perseverance = the virtue of the less brilliant Teamwork for fresh brain perspective Minitest benefit &amp;raquo;&amp;gt; Learning benefit Left brain vs right brain (focused vs diffused) Checklist to measure test / interview preparation quality Start hard, jump to easy (Focused vs diffused) Anxiety = Excited for test, not afraid Breath slowly   Week 1: What is Learning?</description>
     </item>
     
     <item>
       <title>SWE big N tips</title>
-      <link>https://shank4804.github.io/posts/swe-interview-and-learning-tips/</link>
+      <link>https://shashankkumar.me/posts/swe-interview-and-learning-tips/</link>
       <pubDate>Mon, 01 Apr 2019 07:25:15 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/swe-interview-and-learning-tips/</guid>
+      <guid>https://shashankkumar.me/posts/swe-interview-and-learning-tips/</guid>
       <description>I was watching through Joma&amp;rsquo;s video on his YouTube channel about a guy named Cyrus Xi receiving amazing offers and I think his tips on preparing / learning in general are worth documenting. So, here it is.
 Video link:   His reddit posts:  Pre-FB: https://www.reddit.com/r/cscareerquestions/comments/b3w1gg/2_year_update_my_journey_tips_29_gpa_at_a_small/ Currently after getting Uber, Snap etc.: https://www.reddit.com/r/cscareerquestions/comments/9i0pow/graduated_with_a_24_gpa_1_year_ago_after_studying/  His study guide: https://workflowy.com/s/study-guide/RD5kZ682pWX5oxiE
 Along the read, I found this amazing article on Career Planning. Seems it was originally written by Marc Andreessen.</description>
@@ -119,31 +128,31 @@ Along the read, I found this amazing article on Career Planning. Seems it was or
     
     <item>
       <title>Review of UC Berkeley Software Product Management course (COMPSCI X418.1)</title>
-      <link>https://shank4804.github.io/posts/software-product-management-uc-berkeley-ext/</link>
+      <link>https://shashankkumar.me/posts/software-product-management-uc-berkeley-ext/</link>
       <pubDate>Wed, 27 Mar 2019 06:07:19 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/software-product-management-uc-berkeley-ext/</guid>
+      <guid>https://shashankkumar.me/posts/software-product-management-uc-berkeley-ext/</guid>
       <description>I took this course as a part of Spring 2019 semester coursework at UC Berkeley extension.
 I see soo many engineers jumping on the Product bandwagon. I signed up for this to get a sense of what the fuss is all about.
 UC Berkeley extension is a program from UC Berkeley where individual courses from various departments can be taken as evening sessions in SF or Berkeley campus. Seems like it is targeted for folks looking to learn a new skill or for a career switch.</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://shank4804.github.io/resume/</link>
+      <title>Resume</title>
+      <link>https://shashankkumar.me/resume/</link>
       <pubDate>Sun, 17 Feb 2019 07:58:41 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/resume/</guid>
-      <description> Resume   </description>
+      <guid>https://shashankkumar.me/resume/</guid>
+      <description>Bellevue, Washington · shank4804@gmail.com · linkedin.com/in/shank7485 Download PDF Senior Product Manager with 9+ years spanning product management and software engineering at Microsoft Azure, AWS, Workday and Intel. Led the 0-to-1 build and commercialization of Azure Storage Actions — now automating data management for 300+ global enterprises handling 2B+ objects. I pair deep familiarity with distributed systems with hands-on GenAI and LLM agent prototyping to ship platform capabilities, craft monetization models, and guide cross-functional teams from concept through global launch.</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://shank4804.github.io/contact/</link>
+      <title>Contact</title>
+      <link>https://shashankkumar.me/contact/</link>
       <pubDate>Sat, 16 Feb 2019 08:24:42 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/contact/</guid>
-      <description> Contact  Email:
+      <guid>https://shashankkumar.me/contact/</guid>
+      <description>  Email:
 shank4804@gmail.com   
 LinkedIn:
 linkedin.com/in/shank7485   
@@ -156,20 +165,20 @@ github.com/shank7485
     
     <item>
       <title>Writing Unit tests and Mocks in Golang</title>
-      <link>https://shank4804.github.io/posts/unit-testing-in-golang/</link>
+      <link>https://shashankkumar.me/posts/unit-testing-in-golang/</link>
       <pubDate>Fri, 16 Feb 2018 08:38:00 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/unit-testing-in-golang/</guid>
+      <guid>https://shashankkumar.me/posts/unit-testing-in-golang/</guid>
       <description>I recently started writing some code in Go (or Golang?) there are lot of amazing things to explore. Its always exciting to learn a new language.
 So far, I absolutely love Golang. If you are like me who likes C, Python and all this systems/low level OS stuff, you&amp;rsquo;ll get a feeling that Golang for systems will be similar to what JS is for the web. (+ve JS things :-) ).</description>
     </item>
     
     <item>
       <title>Applications on Kubernetes</title>
-      <link>https://shank4804.github.io/posts/application-on-kubernetes/</link>
+      <link>https://shashankkumar.me/posts/application-on-kubernetes/</link>
       <pubDate>Tue, 12 Dec 2017 07:49:08 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/application-on-kubernetes/</guid>
+      <guid>https://shashankkumar.me/posts/application-on-kubernetes/</guid>
       <description>It&amp;rsquo;s a world of microservices. With soo many companies containerizing their apps and scaling them using Kubernetes, it&amp;rsquo;s hard not to ignore.
 To an idea of Kubernetes and to play around with it, I created this tutorial to install and deploy dockerized apps on a kubernetes cluster.
 This tutorial has 3 parts:
@@ -180,10 +189,10 @@ This tutorial has 3 parts:
     
     <item>
       <title>Vim Auto Complete</title>
-      <link>https://shank4804.github.io/posts/vim-auto-complete/</link>
+      <link>https://shashankkumar.me/posts/vim-auto-complete/</link>
       <pubDate>Wed, 10 Feb 2016 07:48:15 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/vim-auto-complete/</guid>
+      <guid>https://shashankkumar.me/posts/vim-auto-complete/</guid>
       <description>Get code completion for Python like an IDE in the terminal using Vim editor with YouCompleteMe and Vungle plugin. Similar to
  This is for Ubuntu Linux (Debian) based OSes. Steps to be followed:   Update to latest Vim. This is done as Vim version greater than 7.41 isn&amp;rsquo;t available in Apt-get of Ubuntu Linux.
 sudo add-apt-repository ppa:pkg-vim/vim-daily
@@ -194,10 +203,10 @@ dpkg -s vim | grep &#39;Version&#39; #should be greater than 7.</description>
     
     <item>
       <title>Internet Relay Chat</title>
-      <link>https://shank4804.github.io/posts/irc/</link>
+      <link>https://shashankkumar.me/posts/irc/</link>
       <pubDate>Fri, 08 Jan 2016 07:46:15 +0000</pubDate>
       
-      <guid>https://shank4804.github.io/posts/irc/</guid>
+      <guid>https://shashankkumar.me/posts/irc/</guid>
       <description>Ever since I wanted to contribute to an open-source project, I was told on online forums to contact the specific IRC channels to ask questions and start contributing. That&amp;rsquo;s fine. I&amp;rsquo;ll do that. But I never understood what was IRC.
 So what&amp;rsquo;s IRC? Wikipedia quotes &amp;lsquo;Internet Relay Chat Protocol (IRCP) is an application layer protocol that facilitates communication in the form of text. The chat process works on a client/server networking model.</description>
     </item>

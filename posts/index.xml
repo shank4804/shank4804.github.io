@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Shashank Kumar Shankar — Product Manager, Cloud &amp; AI</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Feb 2026 06:10:01 +0000</lastBuildDate><atom:link href="https://shashankkumar.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Sep 2026 00:00:00 -0700</lastBuildDate><atom:link href="https://shashankkumar.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Product Insights #2: Jev and the Case for Decision Models</title>
+      <link>https://shashankkumar.me/posts/jev/</link>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 -0700</pubDate>
+      
+      <guid>https://shashankkumar.me/posts/jev/</guid>
+      <description>A lot of the work inside an AI application comes down to small decisions. Which team should handle this ticket? Which tool should run next? Is there enough information to proceed?
+What caught my attention about Jev from TypeSafe AI is that it makes those decisions the product. You give it context and defined questions. It returns structured answers that software can use directly.
+After Hebbia, I wanted to look at another company changing how software uses AI.</description>
+    </item>
+    
     <item>
       <title>Building AI Trio: A Multi-LLM Debate Platform Built with AI-Assisted Development</title>
       <link>https://shashankkumar.me/posts/building-ai-trio/</link>

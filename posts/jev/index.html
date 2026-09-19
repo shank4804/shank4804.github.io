@@ -1,0 +1,412 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Product Insights #2: Jev and the Case for Decision Models | Shashank Kumar Shankar — Product Manager, Cloud &amp; AI</title>
+
+  <meta name="description" content="A product look at TypeSafe AI&#39;s Jev: fast decisions, confidence scores, the economics of automation, and what would make the business defensible.">
+  <link rel="canonical" href="https://shashankkumar.me/posts/jev/">
+
+  <meta property="og:site_name" content="Shashank Kumar Shankar — Product Manager, Cloud &amp; AI">
+  <meta property="og:title" content="Product Insights #2: Jev and the Case for Decision Models">
+  <meta property="og:description" content="A product look at TypeSafe AI&#39;s Jev: fast decisions, confidence scores, the economics of automation, and what would make the business defensible.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shashankkumar.me/posts/jev/">
+  <meta property="og:image" content="https://shashankkumar.me/images/home-image.png">
+  <meta property="article:published_time" content="2026-09-19T00:00:00-07:00">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product Insights #2: Jev and the Case for Decision Models">
+  <meta name="twitter:description" content="A product look at TypeSafe AI&#39;s Jev: fast decisions, confidence scores, the economics of automation, and what would make the business defensible.">
+  <meta name="twitter:image" content="https://shashankkumar.me/images/home-image.png">
+  <meta name="twitter:creator" content="@sshank_">
+
+  <link rel="icon" href="https://shashankkumar.me/favicon.ico" sizes="any">
+  <link rel="icon" href="https://shashankkumar.me/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://shashankkumar.me/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="https://shashankkumar.me/css/bootstrap.min.css">
+  <style>
+.container {
+  max-width: 700px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+  border-bottom: 1px solid #212529;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+}
+
+ 
+#home-jumbotron {
+  text-align: left;
+  padding: 0;
+}
+.home-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  margin: 0.5em 0 1.25em;
+}
+.home-photo {
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.home-header-text h1 {
+  margin: 0 0 0.25em;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+.home-tagline {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #495057;
+}
+.home-cta {
+  margin: 1.5em 0 2em;
+}
+.home-cta a {
+  margin-right: 0.4em;
+  margin-bottom: 0.4em;
+}
+.home-live {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1a7f37;
+  border: 1px solid #1a7f37;
+  border-radius: 999px;
+  padding: 0 0.5em;
+  vertical-align: 1px;
+}
+#main h2 {
+  font-size: 1.4rem;
+  margin-top: 1.8em;
+}
+@media (max-width: 480px) {
+  .home-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+  .home-header-text h1 { font-size: 1.6rem; }
+}
+
+ 
+.resume-contact {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 0.75em;
+}
+.resume-actions {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.resume-meta {
+  display: block;
+  color: #6c757d;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+#main h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5em;
+}
+
+ 
+.project {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1.25em 1.5em;
+  margin-bottom: 1.75em;
+}
+.project h3 {
+  margin-top: 0;
+  margin-bottom: 0.15em;
+  font-size: 1.3rem;
+}
+.project .project-tagline {
+  color: #6c757d;
+  margin-bottom: 1em;
+}
+.project h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6c757d;
+  margin-top: 1.1em;
+  margin-bottom: 0.35em;
+}
+.project p {
+  margin-bottom: 0.6em;
+}
+.project-stack {
+  font-size: 0.9em;
+  color: #495057;
+}
+.project-links {
+  margin-top: 1.1em;
+}
+.project-links a {
+  margin-right: 0.4em;
+  margin-bottom: 0.3em;
+}
+.project-note {
+  font-size: 0.85em;
+  color: #6c757d;
+  margin-top: 0.5em;
+}
+.project-status {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+  border-radius: 999px;
+  padding: 0.1em 0.7em;
+  vertical-align: middle;
+}
+.project img {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+.page-intro {
+  color: #495057;
+  margin-bottom: 2em;
+}
+</style>
+
+</head>
+
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> About</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/posts/"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/projects"><i data-feather="box"></i> Projects</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/photography"><i data-feather="camera"></i> Photography</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/resume"><i data-feather="file-text"></i> Resume</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/contact"><i data-feather="send"></i> Contact</a>
+  
+  </nav>
+</div>
+    <div class="container">
+      <main id="main">
+        
+
+<h1>Product Insights #2: Jev and the Case for Decision Models</h1>
+<p>A lot of the work inside an AI application comes down to small decisions. Which team should handle this ticket? Which tool should run next? Is there enough information to proceed?</p>
+<p>What caught my attention about <a href="https://typesafe.ai/">Jev from TypeSafe AI</a> is that it makes those decisions the product. You give it context and defined questions. It returns structured answers that software can use directly.</p>
+<p>After <a href="/posts/product-insights-1-hebbia/">Hebbia</a>, I wanted to look at another company changing how software uses AI. This time, the interesting interface is an API.</p>
+<h2 id="the-problem-small-decisions-add-up">The problem: Small decisions add up</h2>
+<p>Imagine a support workflow that reads an email, identifies the issue, checks urgency, and routes it to a team. Only after that does it draft a response.</p>
+<p>Those first steps happen repeatedly. Each has a latency budget, a cost, and a consequence when it goes wrong. A slow router delays every ticket. An unreliable urgency check can bury an outage in the normal queue.</p>
+<p>For a PM, the useful question is how much of that workflow can be automated at an acceptable error rate. A model that writes a convincing response solves only part of the problem.</p>
+<h2 id="the-product-give-software-a-bounded-decision">The product: Give software a bounded decision</h2>
+<p>Jev&rsquo;s API takes a state, such as the customer email and relevant account details, alongside typed questions. Its <a href="https://docs.typesafe.ai/introduction">documentation</a> describes three primitives:</p>
+<table>
+<thead>
+<tr>
+<th>Primitive</th>
+<th>What it does</th>
+<th>Support example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Choice</td>
+<td>Selects from options you supply</td>
+<td>Billing, technical support, or sales</td>
+</tr>
+<tr>
+<td>Score</td>
+<td>Evaluates against an ordered rubric</td>
+<td>Severity from minor inconvenience to service outage</td>
+</tr>
+<tr>
+<td>Noul</td>
+<td>Returns the probability that a yes/no statement is true</td>
+<td>Is the customer asking to cancel?</td>
+</tr>
+</tbody>
+</table>
+<p>You can ask several questions against the same state in one call. That makes the support example easy to picture: read the email once, evaluate its category and urgency, then let application code decide what happens next.</p>
+<p>I like the separation of responsibilities. The model interprets messy language. The product team defines the available actions and the conditions for taking them.</p>
+<p>It also makes a missing option a product problem. If every ticket must be billing, technical support, or sales, where does an ambiguous complaint go? I would include a review path from the beginning.</p>
+<h2 id="why-not-use-an-llm-with-structured-outputs">Why not use an LLM with structured outputs?</h2>
+<p>That is a fair alternative. Modern LLM APIs already support schema-constrained responses. <a href="https://developers.openai.com/api/docs/guides/structured-outputs">OpenAI&rsquo;s Structured Outputs</a> can enforce a supported JSON schema, including enumerated choices. The comparison has to go beyond whether an answer is valid JSON.</p>
+<p>TypeSafe&rsquo;s bet is that specializing in decisions produces a better combination of speed, cost, and uncertainty estimates. The company describes a parallel sampler and a training method called Reinforcement Learning for Calibrated Decisions. Its <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">launch post</a> reports end-to-end latency of 70 to 500 milliseconds.</p>
+<p>Those are vendor results. TypeSafe also notes that its speed tests generally ran from the West Coast, near its service. I would compare it against a small model with structured outputs on the actual workload, including slow requests and escalations. That is the comparison a buyer needs.</p>
+<h2 id="confidence-is-the-part-worth-watching">Confidence is the part worth watching</h2>
+<p>A decision becomes more useful when the system can tell when to hand it off. Easy tickets can move automatically. Ambiguous ones can go to a stronger model or a person.</p>
+<p>There is a detail here that matters. For Choice and Score, Jev&rsquo;s <code>confidence</code> is a statistic derived from the returned probability distribution. It is not interchangeable with the probability that the selected answer is correct. A confidence value of 0.9 does not, by itself, mean 90% accuracy on your tickets. TypeSafe explains this distinction in its <a href="https://docs.typesafe.ai/confidence">confidence documentation</a>.</p>
+<p>My first evaluation would measure <strong>automation coverage at an acceptable error rate</strong>. How many tickets can move without review while keeping misroutes below the team&rsquo;s target? Then I would check the result across languages, customer segments, and unusual cases.</p>
+<p>Getting an allowed answer also does not guarantee getting the right answer. Jev can choose the wrong category from a perfectly valid list. TypeSafe&rsquo;s own <a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13">limitations page</a> is worth reading alongside the launch claims.</p>
+<h2 id="where-i-would-start">Where I would start</h2>
+<p>Support triage looks like a sensible entry point. The decisions are frequent, the categories can be defined, and a wrong route can usually be corrected. Teams can compare the model&rsquo;s recommendations with existing routing before letting it act.</p>
+<p>Agent tool selection is another interesting use case. Application code can supply the actions available at that step, and Jev can help select among them. Permissions and approval rules still belong in the surrounding system. A confidence score should never grant access to a tool.</p>
+<p>I would start with one measurable workflow. Trying to automate an entire agent loop immediately makes it harder to tell which decisions are creating value and which are creating work for someone else.</p>
+<h2 id="pricing-and-the-business-model">Pricing and the business model</h2>
+<p>As of September 19, 2026, TypeSafe <a href="https://docs.typesafe.ai/models">lists</a> input pricing at <strong>$0.042 per million tokens</strong>, with free outputs.</p>
+<p>To make that concrete: assuming 1,000 total input tokens per call, one million calls would cost $42 in model usage. That is illustrative arithmetic, excluding retries, downstream models, infrastructure, and human review.</p>
+<p>The price makes experimentation attractive. It also creates a business challenge. At that assumed request size, a million calls generates only $42 of usage revenue. TypeSafe needs very large volumes, larger workloads, or enterprise contracts to build a substantial business.</p>
+<p>The launch post connects Jev&rsquo;s name to Jevons: making a capability cheaper can increase how much people use it. That is the demand bet here. Teams may add semantic checks to workflows where the economics previously did not work.</p>
+<h2 id="what-would-make-this-defensible">What would make this defensible?</h2>
+<p>My hypothesis is that the durable advantage would be reliable decisions across messy production data, backed by useful uncertainty estimates and consistent service performance. A clean API makes adoption easier. Sustained results make customers stay.</p>
+<p>The competitive pressure is real. I would expect buyers to compare Jev with smaller LLMs, task-specific classifiers, and rules for simpler cases. TypeSafe has to keep earning its place in that stack as the alternatives improve.</p>
+<p>I am cautiously bullish on the product direction. Giving developers a fast decision API is a clear proposition. The harder proof is whether it reduces the total cost of a successfully completed workflow once mistakes and review are included.</p>
+<p>That is the metric I would watch: more work completed correctly, with less intervention.</p>
+
+
+
+      </main>
+    </div>
+    
+<footer id="footer" class="mt-auto text-center text-muted">
+  <div class="container">
+    Made with <a href="https://gohugo.io/">Hugo</a> and Golang
+  </div>
+</footer>
+
+    <script src="https://shashankkumar.me/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+
+    
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-27970776-2', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  </body>
+</html>

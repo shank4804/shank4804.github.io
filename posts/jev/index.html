@@ -322,11 +322,31 @@ audio {
 <p>A lot of the work inside an AI application comes down to small decisions. Which team should handle this ticket? Which tool should run next? Is there enough information to proceed?</p>
 <p>What caught my attention about <a href="https://typesafe.ai/">Jev from TypeSafe AI</a> is that it makes those decisions the product. You give it context and defined questions. It returns structured answers that software can use directly.</p>
 <p>After <a href="/posts/product-insights-1-hebbia/">Hebbia</a>, I wanted to look at another company changing how software uses AI. This time, the interesting interface is an API.</p>
+<h2 id="the-idea-behind-jev">The idea behind Jev</h2>
+<p>TypeSafe cofounder <a href="https://typesafe.ai/team">Diogo Almeida</a> contributed to InstructGPT and RLHF, part of the research behind ChatGPT. His <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">launch post</a> starts with a question I find useful: why has progress in conversational AI not translated into more dependable automation?</p>
+<p>The company calls Jev a <strong>System One model</strong>, borrowing from Daniel Kahneman&rsquo;s distinction between fast, intuitive judgments and slower, deliberate reasoning. The intended role is a focused judgment inside a larger workflow. More involved reasoning can be handed to another model or a person. <a href="https://docs.typesafe.ai/concepts/system-one">TypeSafe&rsquo;s overview</a> explains that framing.</p>
+<p>That division of labor makes sense to me. An application needs different kinds of intelligence at different steps. Deciding where a request belongs and investigating the underlying problem are different jobs.</p>
 <h2 id="the-problem-small-decisions-add-up">The problem: Small decisions add up</h2>
 <p>Imagine a support workflow that reads an email, identifies the issue, checks urgency, and routes it to a team. Only after that does it draft a response.</p>
 <p>Those first steps happen repeatedly. Each has a latency budget, a cost, and a consequence when it goes wrong. A slow router delays every ticket. An unreliable urgency check can bury an outage in the normal queue.</p>
 <p>For a PM, the useful question is how much of that workflow can be automated at an acceptable error rate. A model that writes a convincing response solves only part of the problem.</p>
-<h2 id="the-product-give-software-a-bounded-decision">The product: Give software a bounded decision</h2>
+<h2 id="the-product-a-semantic-switch">The product: A semantic switch</h2>
+<p>The mental model I like is a <strong>semantic switch</strong>. An ordinary switch branches on an exact value. This one interprets messy language before selecting from the branches you have defined.</p>
+<p>Think of it as: <strong>context + allowed choices → decision + uncertainty</strong>.</p>
+<p>This is illustrative pseudocode, not the Jev SDK:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> decide(
+    state<span style="color:#f92672">=</span>customer_email,
+    choices<span style="color:#f92672">=</span>[
+        <span style="color:#e6db74">&#34;billing&#34;</span>, <span style="color:#e6db74">&#34;technical&#34;</span>,
+        <span style="color:#e6db74">&#34;sales&#34;</span>, <span style="color:#e6db74">&#34;review&#34;</span>
+    ]
+)
+
+<span style="color:#66d9ef">if</span> result<span style="color:#f92672">.</span>confidence <span style="color:#f92672">&lt;</span> min_confidence:
+    send_to_review(customer_email)
+<span style="color:#66d9ef">else</span>:
+    route_ticket(result<span style="color:#f92672">.</span>choice)
+</code></pre></div><p><code>min_confidence</code> comes from testing on your data. The useful part is that uncertainty changes what the software does.</p>
 <p>Jev&rsquo;s API takes a state, such as the customer email and relevant account details, alongside typed questions. Its <a href="https://docs.typesafe.ai/introduction">documentation</a> describes three primitives:</p>
 <table>
 <thead>
@@ -359,27 +379,55 @@ audio {
 <p>It also makes a missing option a product problem. If every ticket must be billing, technical support, or sales, where does an ambiguous complaint go? I would include a review path from the beginning.</p>
 <h2 id="why-not-use-an-llm-with-structured-outputs">Why not use an LLM with structured outputs?</h2>
 <p>That is a fair alternative. Modern LLM APIs already support schema-constrained responses. <a href="https://developers.openai.com/api/docs/guides/structured-outputs">OpenAI&rsquo;s Structured Outputs</a> can enforce a supported JSON schema, including enumerated choices. The comparison has to go beyond whether an answer is valid JSON.</p>
-<p>TypeSafe&rsquo;s bet is that specializing in decisions produces a better combination of speed, cost, and uncertainty estimates. The company describes a parallel sampler and a training method called Reinforcement Learning for Calibrated Decisions. Its <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">launch post</a> reports end-to-end latency of 70 to 500 milliseconds.</p>
+<p>TypeSafe&rsquo;s bet is that specializing in decisions produces a better combination of speed, cost, and uncertainty estimates. The company describes a parallel sampler and a training method called <a href="https://docs.typesafe.ai/introduction/machine-learning-primer">Reinforcement Learning for Calibrated Decisions</a>. Its <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">launch post</a> reports end-to-end latency of 70 to 500 milliseconds.</p>
 <p>Those are vendor results. TypeSafe also notes that its speed tests generally ran from the West Coast, near its service. I would compare it against a small model with structured outputs on the actual workload, including slow requests and escalations. That is the comparison a buyer needs.</p>
-<h2 id="confidence-is-the-part-worth-watching">Confidence is the part worth watching</h2>
+<p>There are three differences I would evaluate:</p>
+<ul>
+<li><strong>The generation overhead.</strong> An autoregressive model produces output tokens sequentially, even when the requested answer is a small object. A decision model can avoid that output-generation loop. The benefit depends on the model, input length, and how much output you would otherwise generate.</li>
+<li><strong>What the confidence number means.</strong> Asking a model to write <code>&quot;confidence&quot;: 0.95</code> does not establish that the number is calibrated. Calibration needs to be measured against outcomes. Jev makes probability estimates part of its interface and training objective.</li>
+<li><strong>Cost per completed decision.</strong> Compare input, output, retries, and fallback costs. Jev still needs context and clear questions. The savings have to survive a fair comparison with a well-configured alternative.</li>
+</ul>
+<h2 id="two-shifts-in-how-you-build">Two shifts in how you build</h2>
+<h3 id="ask-independent-questions-together">Ask independent questions together</h3>
+<p>A support system might first classify a ticket, then ask about severity, then check for cancellation intent. If each question can be answered from the original email, those calls do not need to wait on one another.</p>
+<p>Jev evaluates questions in parallel against the same state. TypeSafe&rsquo;s <a href="https://docs.typesafe.ai/patterns/fan-out">fan-out pattern</a> recommends asking even potentially relevant questions upfront, then using code to decide which answers matter. For a billing ticket, you can ignore the bug-severity result.</p>
+<p>That changes how I would design the workflow: identify the independent judgments, ask them together, and keep the branching logic explicit. Questions that depend on newly retrieved information still need a later step.</p>
+<h3 id="let-uncertainty-change-the-next-step">Let uncertainty change the next step</h3>
 <p>A decision becomes more useful when the system can tell when to hand it off. Easy tickets can move automatically. Ambiguous ones can go to a stronger model or a person.</p>
 <p>There is a detail here that matters. For Choice and Score, Jev&rsquo;s <code>confidence</code> is a statistic derived from the returned probability distribution. It is not interchangeable with the probability that the selected answer is correct. A confidence value of 0.9 does not, by itself, mean 90% accuracy on your tickets. TypeSafe explains this distinction in its <a href="https://docs.typesafe.ai/confidence">confidence documentation</a>.</p>
 <p>My first evaluation would measure <strong>automation coverage at an acceptable error rate</strong>. How many tickets can move without review while keeping misroutes below the team&rsquo;s target? Then I would check the result across languages, customer segments, and unusual cases.</p>
 <p>Getting an allowed answer also does not guarantee getting the right answer. Jev can choose the wrong category from a perfectly valid list. TypeSafe&rsquo;s own <a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13">limitations page</a> is worth reading alongside the launch claims.</p>
-<h2 id="where-i-would-start">Where I would start</h2>
-<p>Support triage looks like a sensible entry point. The decisions are frequent, the categories can be defined, and a wrong route can usually be corrected. Teams can compare the model&rsquo;s recommendations with existing routing before letting it act.</p>
-<p>Agent tool selection is another interesting use case. Application code can supply the actions available at that step, and Jev can help select among them. Permissions and approval rules still belong in the surrounding system. A confidence score should never grant access to a tool.</p>
-<p>I would start with one measurable workflow. Trying to automate an entire agent loop immediately makes it harder to tell which decisions are creating value and which are creating work for someone else.</p>
+<h2 id="what-could-you-actually-build">What could you actually build?</h2>
+<h3 id="support-triage-across-several-dimensions">Support triage across several dimensions</h3>
+<p>Support triage looks like a sensible entry point. A single email can contain a billing problem, frustration, and a threat to cancel. Asking about each separately preserves information that a single category would lose.</p>
+<p>Consider: &ldquo;You charged us twice, and we are considering moving our whole team elsewhere.&rdquo; The route may be billing, but cancellation intent should also affect the response. Teams can compare those judgments with existing routing before letting the model act.</p>
+<h3 id="dynamic-onboarding-and-personalization">Dynamic onboarding and personalization</h3>
+<p>An application could use recent session context to choose between an onboarding tour, a help prompt, or the standard view. That extends the original idea of a feature flag to decisions based on the meaning of a user&rsquo;s activity.</p>
+<p>I would test this with a latency budget and a default experience if the call times out. A fast model API does not automatically make a fast page load, especially when the network round trip sits in the critical path.</p>
+<h3 id="agent-tool-selection-and-action-checks">Agent tool selection and action checks</h3>
+<p>An agent navigating a browser might have a few legal next actions: open a result, fill a field, scroll, or request clarification. Application code can supply that list and use Jev to help select the next step from the page&rsquo;s text or accessibility tree.</p>
+<p>A separate judgment could flag whether a proposed action appears destructive or changes user data. That can be another input to review, but permissions and approval rules still belong in the surrounding system. A confidence score should never grant access to a tool.</p>
+<h3 id="games-and-simulations">Games and simulations</h3>
+<p>The game-loop example is useful because it makes the latency constraint obvious. Given a character&rsquo;s health, nearby enemies, and available equipment, the next action might be attack, take cover, retreat, or heal.</p>
+<p>TypeSafe&rsquo;s <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">Doom demonstration</a> uses structured game state, not screenshots. The company also says a conventional bot could play better. What interests me is the possibility of changing behavior through instructions without specifying every situation in a behavior tree.</p>
+<p>These examples give the product room to grow. I would still begin with one measurable workflow so the team can see which decisions save effort and which create more review.</p>
+<h2 id="the-infrastructure-angle-what-happens-when-you-stop-generating-text">The infrastructure angle: What happens when you stop generating text?</h2>
+<p>There is a hardware reason this idea is interesting.</p>
+<p>In a typical autoregressive LLM, inference has two phases. <strong>Prefill</strong> processes the input in parallel. <strong>Decode</strong> generates the response token by token. Decode often runs into memory-bandwidth limits, particularly at small batch sizes, because each step needs model weights and cached attention data. NVIDIA&rsquo;s <a href="https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/">inference guide</a> explains that distinction.</p>
+<p>The model does not recompute the whole conversation from scratch for every token. A KV cache preserves earlier attention calculations. But reading that cache and the weights still takes bandwidth, and sequential generation adds repeated steps. Batching and other serving optimizations can improve utilization.</p>
+<p>Jev gives up free-form text generation. My inference is that avoiding the repeated decode loop creates room for a different cost and latency profile. That is a plausible architectural advantage, but it does not establish that Jev always achieves full GPU utilization or eliminates memory bottlenecks.</p>
+<p>For an infrastructure buyer, the interesting possibility is doing less work per useful result. If a workflow only needs a decision, specializing the output may remove work that the customer never needed in the first place.</p>
 <h2 id="pricing-and-the-business-model">Pricing and the business model</h2>
 <p>As of September 19, 2026, TypeSafe <a href="https://docs.typesafe.ai/models">lists</a> input pricing at <strong>$0.042 per million tokens</strong>, with free outputs.</p>
 <p>To make that concrete: assuming 1,000 total input tokens per call, one million calls would cost $42 in model usage. That is illustrative arithmetic, excluding retries, downstream models, infrastructure, and human review.</p>
 <p>The price makes experimentation attractive. It also creates a business challenge. At that assumed request size, a million calls generates only $42 of usage revenue. TypeSafe needs very large volumes, larger workloads, or enterprise contracts to build a substantial business.</p>
-<p>The launch post connects Jev&rsquo;s name to Jevons: making a capability cheaper can increase how much people use it. That is the demand bet here. Teams may add semantic checks to workflows where the economics previously did not work.</p>
+<p>The <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">launch post</a> connects Jev&rsquo;s name to Jevons: making a capability cheaper can increase how much people use it. That is the demand bet here. Teams may add semantic checks to workflows where the economics previously did not work.</p>
 <h2 id="what-would-make-this-defensible">What would make this defensible?</h2>
 <p>My hypothesis is that the durable advantage would be reliable decisions across messy production data, backed by useful uncertainty estimates and consistent service performance. A clean API makes adoption easier. Sustained results make customers stay.</p>
 <p>The competitive pressure is real. I would expect buyers to compare Jev with smaller LLMs, task-specific classifiers, and rules for simpler cases. TypeSafe has to keep earning its place in that stack as the alternatives improve.</p>
 <p>I am cautiously bullish on the product direction. Giving developers a fast decision API is a clear proposition. The harder proof is whether it reduces the total cost of a successfully completed workflow once mistakes and review are included.</p>
-<p>That is the metric I would watch: more work completed correctly, with less intervention.</p>
+<p>The bigger idea is that more AI could become an ordinary part of application logic: a semantic check inside a workflow, called whenever software needs to interpret something messy. Cheaper, faster decisions could make that practical in many more places.</p>
+<p>That is what makes Jev worth watching. I want to see whether the efficiency translates into more work completed correctly, with less intervention.</p>
 
 
 

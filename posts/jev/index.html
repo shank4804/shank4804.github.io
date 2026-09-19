@@ -407,6 +407,34 @@ audio {
 <h3 id="agent-tool-selection-and-action-checks">Agent tool selection and action checks</h3>
 <p>An agent navigating a browser might have a few legal next actions: open a result, fill a field, scroll, or request clarification. Application code can supply that list and use Jev to help select the next step from the page&rsquo;s text or accessibility tree.</p>
 <p>A separate judgment could flag whether a proposed action appears destructive or changes user data. That can be another input to review, but permissions and approval rules still belong in the surrounding system. A confidence score should never grant access to a tool.</p>
+<h3 id="trying-it-on-this-blog">Trying it on this blog</h3>
+<p>I wanted to see what that speed looked like in practice, so I used <a href="https://github.com/browser-use/jev-ultrafast">jev-ultrafast</a> and Codex&rsquo;s built-in browser on this site. Both started from the blog listing, opened this article, and moved through it until the final paragraph and footer were visible.</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Time to finish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jev choosing the next browser action at each step</td>
+<td>About 3 seconds</td>
+</tr>
+<tr>
+<td>Codex reviewing a screenshot before choosing each next action</td>
+<td>About 58 seconds</td>
+</tr>
+<tr>
+<td>Codex carrying out a prepared sequence of clicks and scrolls</td>
+<td>About 3 seconds</td>
+</tr>
+</tbody>
+</table>
+<p>That first comparison caught my attention. Jev completed the navigation in a few seconds while Codex&rsquo;s step-by-step approach took almost a minute. But the third result matters just as much: when Codex already had a simple set of steps to follow, it finished in roughly the same time as Jev. It did not need to stop and think after every scroll.</p>
+<p>The times cover opening the article and reaching the end, excluding setup and the later visual review. The two faster results are the middle times from three runs each; the step-by-step result is from one run. This was a small experiment on one familiar, mostly static page.</p>
+<p><strong>Getting to the bottom of a page is different from checking how it looks.</strong> Both approaches reached the right place. Jev&rsquo;s navigation loop did not judge the page&rsquo;s appearance. Codex&rsquo;s separate visual review found cramped table spacing and a code example that needed sideways scrolling on a narrow phone screen.</p>
+<p>My takeaway is that Jev looks useful when an agent must repeatedly choose its next action. A prepared sequence can already be fast when the steps are predictable. Understanding the page and explaining what needs fixing still called for a broader review.</p>
 <h3 id="games-and-simulations">Games and simulations</h3>
 <p>The game-loop example is useful because it makes the latency constraint obvious. Given a character&rsquo;s health, nearby enemies, and available equipment, the next action might be attack, take cover, retreat, or heal.</p>
 <p>TypeSafe&rsquo;s <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">Doom demonstration</a> uses structured game state, not screenshots. The company also says a conventional bot could play better. What interests me is the possibility of changing behavior through instructions without specifying every situation in a behavior tree.</p>

@@ -1,212 +1,433 @@
 <!doctype html>
-<html lang="en">
-<head>
+
+<html lang="en" class="h-100">
+  <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Projects | Shashank Kumar Shankar | Product Manager, Cloud &amp; AI</title>
+  <title>Projects | Shashank Kumar Shankar — Product Manager, Cloud &amp; AI</title>
 
-  <meta name="description" content="AI apps, interactive explainers and browser games by Shashank Kumar Shankar. Try the projects and explore what I built.">
-  <link rel="canonical" href="https://shashankkumar.pages.dev/projects/">
+  <meta name="description" content="AI products I designed and built myself - multi-model debate, agentic incident triage, RAG personalization - and what building them taught me about shipping AI.">
+  <link rel="canonical" href="https://shashankkumar.me/projects/">
 
-  <meta property="og:site_name" content="Shashank Kumar Shankar | Product Manager, Cloud &amp; AI">
+  <meta property="og:site_name" content="Shashank Kumar Shankar — Product Manager, Cloud &amp; AI">
   <meta property="og:title" content="Projects">
-  <meta property="og:description" content="AI apps, interactive explainers and browser games by Shashank Kumar Shankar. Try the projects and explore what I built.">
+  <meta property="og:description" content="AI products I designed and built myself - multi-model debate, agentic incident triage, RAG personalization - and what building them taught me about shipping AI.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://shashankkumar.pages.dev/projects/">
-  <meta property="og:image" content="https://shashankkumar.pages.dev/images/ai-trio-home.png">
+  <meta property="og:url" content="https://shashankkumar.me/projects/">
+  <meta property="og:image" content="https://shashankkumar.me/images/ai-trio-home.png">
   <meta property="article:published_time" content="2026-09-18T00:00:00Z">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Projects">
-  <meta name="twitter:description" content="AI apps, interactive explainers and browser games by Shashank Kumar Shankar. Try the projects and explore what I built.">
-  <meta name="twitter:image" content="https://shashankkumar.pages.dev/images/ai-trio-home.png">
+  <meta name="twitter:description" content="AI products I designed and built myself - multi-model debate, agentic incident triage, RAG personalization - and what building them taught me about shipping AI.">
+  <meta name="twitter:image" content="https://shashankkumar.me/images/ai-trio-home.png">
   <meta name="twitter:creator" content="@sshank_">
 
-  <link rel="icon" href="https://shashankkumar.pages.dev/favicon.ico" sizes="any">
-  <link rel="icon" href="https://shashankkumar.pages.dev/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="https://shashankkumar.pages.dev/apple-touch-icon.png">
+  <link rel="icon" href="https://shashankkumar.me/favicon.ico" sizes="any">
+  <link rel="icon" href="https://shashankkumar.me/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://shashankkumar.me/apple-touch-icon.png">
 
-  <link rel="preload" href="/fonts/portfolio-2.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="/css/fonts.css">
-  
-  <link rel="stylesheet" href="/studio.min.e0e2f36af37d1c1fec4d66378360f8c973ec3e31338b032dbfebaafa29c775b5.css" integrity="sha256-4OLzavN9HB/sTWY3g2D4yXPsPjEziwMtv&#43;uq&#43;inHdbU=">
+  <link rel="stylesheet" href="https://shashankkumar.me/css/bootstrap.min.css">
+  <style>
+.container {
+  max-width: 700px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+  border-bottom: 1px solid #212529;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+}
+
+ 
+#home-jumbotron {
+  text-align: left;
+  padding: 0;
+}
+.home-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  margin: 0.5em 0 1.25em;
+}
+.home-photo {
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.home-header-text h1 {
+  margin: 0 0 0.25em;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+.home-tagline {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #495057;
+}
+.home-cta {
+  margin: 1.5em 0 2em;
+}
+.home-cta a {
+  margin-right: 0.4em;
+  margin-bottom: 0.4em;
+}
+.home-live {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1a7f37;
+  border: 1px solid #1a7f37;
+  border-radius: 999px;
+  padding: 0 0.5em;
+  vertical-align: 1px;
+}
+#main h2 {
+  font-size: 1.4rem;
+  margin-top: 1.8em;
+}
+@media (max-width: 480px) {
+  .home-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+  .home-header-text h1 { font-size: 1.6rem; }
+}
+
+ 
+.resume-contact {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 0.75em;
+}
+.resume-actions {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.resume-meta {
+  display: block;
+  color: #6c757d;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+#main h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5em;
+}
+
+ 
+.project {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1.25em 1.5em;
+  margin-bottom: 1.75em;
+}
+.project h3 {
+  margin-top: 0;
+  margin-bottom: 0.15em;
+  font-size: 1.3rem;
+}
+.project .project-tagline {
+  color: #6c757d;
+  margin-bottom: 1em;
+}
+.project h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6c757d;
+  margin-top: 1.1em;
+  margin-bottom: 0.35em;
+}
+.project p {
+  margin-bottom: 0.6em;
+}
+.project-stack {
+  font-size: 0.9em;
+  color: #495057;
+}
+.project-links {
+  margin-top: 1.1em;
+}
+.project-links a {
+  margin-right: 0.4em;
+  margin-bottom: 0.3em;
+}
+.project-note {
+  font-size: 0.85em;
+  color: #6c757d;
+  margin-top: 0.5em;
+}
+.project-status {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+  border-radius: 999px;
+  padding: 0.1em 0.7em;
+  vertical-align: middle;
+}
+.project img {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+.page-intro {
+  color: #495057;
+  margin-bottom: 2em;
+}
+</style>
+
 </head>
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <aside class="sidebar">
-  <a class="identity" href="/" aria-label="Shashank Kumar Shankar, home">Shashank <br>Kumar <br>Shankar</a>
-  <img class="portrait" src="/images/profile.jpg" alt="Shashank Kumar Shankar" width="200" height="270">
-  <p class="sidebar-intro">Product, engineering,<br>and things I build.</p>
-  <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false"><i data-feather="menu" aria-hidden="true"></i><span>Menu</span></button>
-  <nav id="site-nav" aria-label="Main navigation">
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
     
     
       
-      <a href="/projects/" class="active" aria-current="page"><i data-feather="layers" aria-hidden="true"></i><span>Work</span></a>
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> About</a>
+  
+    
     
       
-      <a href="/posts/" ><i data-feather="edit-3" aria-hidden="true"></i><span>Writing</span></a>
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/posts/"><i data-feather="edit"></i> Blog</a>
+  
+    
     
       
-      <a href="/photography/" ><i data-feather="image" aria-hidden="true"></i><span>Photography</span></a>
+      
+      
+      
+       
+        
+        
+      
+    
+    
+    <a class="nav-link nav-link-active" href="/projects"><i data-feather="box"></i> Projects</a>
+  
+    
     
       
-      <a href="/about/" ><i data-feather="user" aria-hidden="true"></i><span>About</span></a>
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/photography"><i data-feather="camera"></i> Photography</a>
+  
+    
     
       
-      <a href="/contact/" ><i data-feather="send" aria-hidden="true"></i><span>Contact</span></a>
+      
+      
+      
+        
+      
     
-    <a class="resume-nav" href="/resume/"><i data-feather="file-text" aria-hidden="true"></i><span>Résumé</span></a>
+    
+    <a class="nav-link " href="/resume"><i data-feather="file-text"></i> Resume</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/contact"><i data-feather="send"></i> Contact</a>
+  
   </nav>
-  <p class="sidebar-location">Bellevue, Washington</p>
-</aside>
+</div>
+    <div class="container">
+      <main id="main">
+        
 
-  <div class="site-body">
-    <main id="main" tabindex="-1">
-<header class="page-heading"><p class="eyebrow">Selected work and experiments</p><h1>Things I build.</h1><p>AI apps, visual explainers and browser experiments. I design and develop these personal projects with AI coding assistants.</p></header>
-<nav class="category-nav" aria-label="Project categories"><a href="#live-cloudflare-projects">AI apps</a><a href="#interactive-explainers">Interactive explainers</a><a href="#games-and-visual-experiments">Games and experiments</a><a href="#earlier-projects">Earlier projects</a></nav>
+<h1>Projects</h1>
+<p class="page-intro">
+These are products I designed, built and shipped on my own time. I build them with AI coding
+assistants, which I think is worth stating plainly rather than hiding: the interesting part of
+this work is no longer typing the syntax, it is specifying the thing completely enough that it
+survives contact with real users. Each entry below says what the product does, what I decided,
+and what building it taught me about AI products.
+</p>
+<div class="project">
+<h3 id="ai-trio-span-classproject-statuslivespan">AI Trio <span class="project-status">live</span></h3>
+<p class="project-tagline">GPT-5, Gemini and Claude in one conversation, arguing with each other.</p>
+<p><strong>The problem.</strong> Ask one model an ambiguous question and you get one model&rsquo;s answer, presented
+with total confidence. Its blind spots are invisible because nothing contradicts them.</p>
+<p><strong>What I built.</strong> A question fans out to all three models simultaneously. They stream back in
+parallel into a shared conversation where each can see and challenge what the others said.
+A Voice Room lets you talk to all three at once, and a safety layer runs alongside responses
+doing prompt-injection detection, output validation and rate limiting.</p>
+<p><strong>The decision that mattered.</strong> Treating <em>disagreement</em> as the product rather than a defect.
+Most multi-model tools aggregate or compare; putting the models in conversation changes the
+interaction from &ldquo;get three answers&rdquo; to &ldquo;watch a debate,&rdquo; which is what actually surfaces the
+hidden tradeoffs in a decision.</p>
+<p><strong>What it taught me.</strong> Roughly 95% of specified features worked on first generation — but that
+number hides everything not in the spec. Edge cases and security had to be named explicitly, and
+the architecture was sound only because I designed it. Deployment, cost monitoring and security
+architecture still needed me. The bottleneck moved from writing syntax to specifying requirements
+completely. Running it also taught me why pay-per-token pricing is fair but unpredictable, and
+pushed me toward hybrid pricing with a predictable floor and user-set spending caps.</p>
+<p class="project-stack"><strong>Stack:</strong> GPT-5, Gemini, Claude APIs · real-time streaming · speech-to-text · built with Claude Code</p>
+<p class="project-links">
+<a class="btn btn-outline-dark btn-sm" href="https://ai-trio-shank4804s-projects.vercel.app/" target="_blank" rel="noopener">Try it live</a>
+<a class="btn btn-outline-dark btn-sm" href="/posts/building-ai-trio/">Read the full write-up</a>
+</p>
+<p class="project-note">Sign in with Google; the free tier covers 10 messages a day.</p>
+</div>
+<div class="project">
+<h3 id="fashionmateai-span-classproject-statuslivespan">FashionMateAI <span class="project-status">live</span></h3>
+<p class="project-tagline">A wardrobe assistant that remembers your closet and your taste.</p>
+<p><strong>The problem.</strong> Style advice from a general model is generic, because it knows nothing about
+what you actually own or what you have worn and liked.</p>
+<p><strong>What I built.</strong> A GPT-4o assistant over a LlamaIndex retrieval layer, combining multi-turn
+memory with retrieval-augmented personalization so recommendations are grounded in your actual
+closet rather than in fashion generalities. Built as the capstone for Stanford Continuing
+Studies' <em>Large Language Models for Business with Python</em>.</p>
+<p><strong>The decision that mattered.</strong> Putting the wardrobe in a retrieval layer instead of the prompt.
+Personalization that lives in context windows evaporates; personalization that lives in an index
+compounds as the closet grows.</p>
+<p class="project-stack"><strong>Stack:</strong> GPT-4o · LlamaIndex · RAG · multi-turn memory</p>
+<p class="project-links">
+<a class="btn btn-outline-dark btn-sm" href="https://fashionmate-dev-frontend.onrender.com/" target="_blank" rel="noopener">Try the demo</a>
+</p>
+</div>
+<div class="project">
+<h3 id="serviceopsai-span-classproject-statusagentic-co-pilotspan">ServiceOpsAI <span class="project-status">agentic co-pilot</span></h3>
+<p class="project-tagline">Incident triage for SREs, in minutes instead of hours.</p>
+<p><strong>The problem.</strong> An SRE opening a page at 3am spends most of the incident just assembling
+context — which service, which recent change, which runbook, what happened last time.</p>
+<p><strong>What I built.</strong> An agentic LLM co-pilot that uses RAG over operational knowledge, function
+calling into live systems, and structured reasoning to assemble that context and propose a triage
+path. Built as the capstone for Stanford Continuing Studies' <em>Generative AI for Product Managers</em>.</p>
+<p><strong>The decision that mattered.</strong> Scoping it to triage rather than remediation. The agent assembles
+evidence and proposes; the human still acts. In an incident, a confidently wrong autonomous action
+is far more expensive than a slow one.</p>
+<p class="project-stack"><strong>Stack:</strong> Agentic LLM orchestration · RAG · function calling · structured reasoning</p>
+<p class="project-links">
+<a class="btn btn-outline-dark btn-sm" href="https://docs.google.com/presentation/d/1y0pgSojQAl_C9oGIgjTkXzXOot1R6ZHjVn_L4zF6htQ/edit?usp=sharing" target="_blank" rel="noopener">See the deck</a>
+</p>
+</div>
+<div class="project">
+<h3 id="careerschatai-span-classproject-statusguidance-platformspan">CareersChatAI <span class="project-status">guidance platform</span></h3>
+<p class="project-tagline">Turning a vague career question into a concrete plan.</p>
+<p><strong>The problem.</strong> People arrive at career decisions with fuzzy intent — &ldquo;should I move into
+product?&rdquo; — and generic advice cannot translate that into next steps specific enough to act on.</p>
+<p><strong>What I built.</strong> An LLM-driven platform that interprets user intent and maps it to curated
+resources and a concrete action plan, rather than returning prose advice.</p>
+<p><strong>The decision that mattered.</strong> Constraining the output to a curated resource set instead of
+letting the model free-associate. A plan you can start on Monday beats an eloquent paragraph.</p>
+<p class="project-stack"><strong>Stack:</strong> LLM intent classification · curated retrieval · action planning</p>
+<p class="project-links">
+<a class="btn btn-outline-dark btn-sm" href="https://www.youtube.com/watch?v=Vx2xSOJgs0o" target="_blank" rel="noopener">Watch the demo</a>
+</p>
+</div>
 
 
-<section class="project-section" id="live-cloudflare-projects"><h2>AI apps</h2><article class="project-overview" id="ai-trio">
-  <div class="project-copy">
-    <p class="eyebrow">AI app</p>
-    <h3>AI Trio</h3>
-    <p>Ask three open models the same question. Compare their reasoning, challenge assumptions, or bring the conversation into the Voice Room.</p>
-    <div class="project-actions"><a class="button" href="https://ai-trio.shank4804-apps.workers.dev/">Open AI Trio<i data-feather="arrow-up-right" aria-hidden="true"></i></a><a class="story-link" href="/posts/building-ai-trio/">Behind the build</a></div>
-    <p class="project-note">Google sign-in required.</p>
-  </div>
-  <a class="project-visual ai-trio" href="https://ai-trio.shank4804-apps.workers.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/ai-trio.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-<article class="project-overview" id="fashionmate">
-  <div class="project-copy">
-    <p class="eyebrow">AI app</p>
-    <h3>FashionMateAI</h3>
-    <p>Outfit ideas grounded in your own wardrobe. Photograph your clothes, save your preferences and plan what to wear. Built from my Stanford Continuing Studies capstone.</p>
-    <div class="project-actions"><a class="button" href="https://fashionmate.shank4804-apps.workers.dev/">Open FashionMateAI<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    <p class="project-note">Google sign-in required.</p>
-  </div>
-  <a class="project-visual fashionmate" href="https://fashionmate.shank4804-apps.workers.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/fashionmate.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-<article class="project-overview" id="mantra-karaoke">
-  <div class="project-copy">
-    <p class="eyebrow">Voice and reading</p>
-    <h3>Mantra Karaoke</h3>
-    <p>A reader that follows your chanting. Read the Hanuman Chalisa, Vishnu Sahasranama or Shiva Tandava in Devanagari, IAST, Kannada or Telugu.</p>
-    <div class="project-actions"><a class="button" href="https://mantra-karaoke.shank4804-apps.workers.dev/">Start reading<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    <p class="project-note">Read freely. Microphone access is needed for voice following.</p>
-  </div>
-  <a class="project-visual mantra-karaoke" href="https://mantra-karaoke.shank4804-apps.workers.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/mantra-karaoke.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-<article class="project-overview" id="shank-labs">
-  <div class="project-copy">
-    <p class="eyebrow">App collection</p>
-    <h3>Shank Labs</h3>
-    <p>The shared home for my small apps. Find AI Trio, FashionMateAI and Mantra Karaoke, together with their privacy and terms pages.</p>
-    <div class="project-actions"><a class="button" href="https://shank-labs.shank4804-apps.workers.dev/">Visit Shank Labs<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    
-  </div>
-  <a class="project-visual shank-labs" href="https://shank-labs.shank4804-apps.workers.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/shank-labs.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-</section>
 
-<section class="project-section" id="interactive-explainers"><h2>Interactive explainers</h2><article class="project-overview" id="gb300-nvsentinel">
-  <div class="project-copy">
-    <p class="eyebrow">Interactive explainer</p>
-    <h3>GB300 NVSentinel</h3>
-    <p>Explore a GPU rack running Kubernetes. Trigger a fault and follow the system as it isolates the node, moves the workload and restores service.</p>
-    <div class="project-actions"><a class="button" href="https://gb300-nvsentinel.pages.dev/">Explore the rack<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
+      </main>
+    </div>
     
+<footer id="footer" class="mt-auto text-center text-muted">
+  <div class="container">
+    Made with <a href="https://gohugo.io/">Hugo</a> and Golang
   </div>
-  <a class="project-visual gb300-nvsentinel" href="https://gb300-nvsentinel.pages.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/gb300-nvsentinel.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-<article class="project-overview" id="phev-explorer">
-  <div class="project-copy">
-    <p class="eyebrow">Interactive explainer</p>
-    <h3>Plug-in Hybrid Explorer</h3>
-    <p>Look inside a plug-in hybrid and follow the energy. Switch driving modes, rotate the car and see how the battery, motor and engine work together.</p>
-    <div class="project-actions"><a class="button" href="https://phev-explorer.pages.dev/">Explore the powertrain<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    
-  </div>
-  <a class="project-visual phev-explorer" href="https://phev-explorer.pages.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/phev-explorer.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-<article class="project-overview" id="bhavas-visual-guide">
-  <div class="project-copy">
-    <p class="eyebrow">Visual guide</p>
-    <h3>Bhavas</h3>
-    <p>An introduction to the twelve houses of Vedic astrology. Explore what each house represents, how the houses relate, and the sources behind the explanations.</p>
-    <div class="project-actions"><a class="button" href="https://bhavas-visual-guide.shank4804-apps.workers.dev/">Explore the twelve houses<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    
-  </div>
-  <a class="project-visual bhavas-visual-guide" href="https://bhavas-visual-guide.shank4804-apps.workers.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/bhavas-visual-guide.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-<article class="project-overview" id="nvda-jev-decision">
-  <div class="project-copy">
-    <p class="eyebrow">Decision explorer</p>
-    <h3>NVIDIA or the market?</h3>
-    <p>Explore hypothetical investing scenarios across NVIDIA, broad-market funds and short-term Treasuries. Examine the assumptions, evidence and recorded JEV decisions.</p>
-    <div class="project-actions"><a class="button" href="https://nvda-jev-decision.pages.dev/">Explore the decisions<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    
-  </div>
-  <a class="project-visual nvda-jev-decision" href="https://nvda-jev-decision.pages.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/nvda-jev-decision.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-</section>
-
-<section class="project-section" id="games-and-visual-experiments"><h2>Games and experiments</h2><article class="project-overview" id="ca-bike-ride">
-  <div class="project-copy">
-    <p class="eyebrow">Browser game</p>
-    <h3>Highway 1</h3>
-    <p>Ride a sports bike down the real Highway 1, built from map and elevation data. Cross the Golden Gate in the fog, run through the Devil&#39;s Slide tunnels, follow the Big Sur cliffs past Bixby Creek Bridge and Hearst Castle, and finish at Santa Monica Pier at dusk.</p>
-    <div class="project-actions"><a class="button" href="https://ca-bike-ride.pages.dev/">Ride Highway 1<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    <p class="project-note">Desktop keyboard and mouse, or a gamepad.</p>
-  </div>
-  <a class="project-visual ca-bike-ride" href="https://ca-bike-ride.pages.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/ca-bike-ride.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-<article class="project-overview" id="ramayana-v2">
-  <div class="project-copy">
-    <p class="eyebrow">Browser game</p>
-    <h3>Ramayana</h3>
-    <p>Play through the Valmiki Ramayana. Explore the world, meet its characters and follow the story through a third-person browser adventure.</p>
-    <div class="project-actions"><a class="button" href="https://ramayana-v2.pages.dev/">Play Ramayana<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    <p class="project-note">Desktop keyboard and mouse, or a gamepad.</p>
-  </div>
-  <a class="project-visual ramayana-v2" href="https://ramayana-v2.pages.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/ramayana-v2.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-<article class="project-overview" id="aura-mode">
-  <div class="project-copy">
-    <p class="eyebrow">Webcam experiment</p>
-    <h3>Aura Mode</h3>
-    <p>Turn gestures into anime-style effects. Bring your palms together to power up, charge an energy wave and launch it with your arms.</p>
-    <div class="project-actions"><a class="button" href="https://aura-mode.pages.dev/">Try Aura Mode<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    <p class="project-note">Requires a webcam. Video processing stays in your browser.</p>
-  </div>
-  <a class="project-visual aura-mode" href="https://aura-mode.pages.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/aura-mode.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-<article class="project-overview" id="glass-bottle">
-  <div class="project-copy">
-    <p class="eyebrow">Physics experiment</p>
-    <h3>Glass Water Bottle</h3>
-    <p>An experiment in glass, light and moving water. Tilt your phone or drag the bottle on a desktop to make the water slosh, splash and settle.</p>
-    <div class="project-actions"><a class="button" href="https://glass-bottle.pages.dev/">Try the bottle<i data-feather="arrow-up-right" aria-hidden="true"></i></a></div>
-    
-  </div>
-  <a class="project-visual glass-bottle" href="https://glass-bottle.pages.dev/" tabindex="-1" aria-hidden="true"><img src="/images/projects/glass-bottle.webp" alt="" width="1280" height="720" loading="lazy"></a>
-</article>
-</section>
-
-<section class="home-section" id="earlier-projects"><h2>Earlier projects</h2>
-<article class="earlier-project"><p class="eyebrow">Stanford Continuing Studies capstone</p><h3>ServiceOpsAI</h3><p>An AI assistant for incident triage. It brings together operational knowledge, runbooks and information from live systems to help an SRE investigate an incident and choose the next step.</p><a class="text-link" href="https://docs.google.com/presentation/d/1y0pgSojQAl_C9oGIgjTkXzXOot1R6ZHjVn_L4zF6htQ/edit?usp=sharing">View the project deck<i data-feather="arrow-up-right" aria-hidden="true"></i></a></article>
-<article class="earlier-project"><p class="eyebrow">Career guidance</p><h3>CareersChatAI</h3><p>A career guidance prototype that turns a broad question into a plan with relevant resources and concrete next steps. It uses the person's intent to select from a curated set of learning and career resources.</p><a class="text-link" href="https://www.youtube.com/watch?v=Vx2xSOJgs0o">Watch the demo<i data-feather="arrow-up-right" aria-hidden="true"></i></a></article>
-</section></main>
-    <footer class="footer">
-  <p>Shashank Kumar Shankar</p>
-  <div><a href="mailto:shank4804@gmail.com">Email</a><a href="https://linkedin.com/in/shank7485">LinkedIn</a><a href="https://github.com/shank4804">GitHub</a><a href="/index.xml">RSS</a></div>
 </footer>
 
-  </div>
-  <script src="/js/feather.min.js" defer></script>
-  <script src="/js/studio.js" defer></script>
-<noscript><style>@media(max-width:800px){#site-nav{display:flex}.menu-toggle{display:none}}.photo-open{pointer-events:none}</style></noscript>
-</body>
+    <script src="https://shashankkumar.me/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+
+    
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-27970776-2', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  </body>
 </html>
